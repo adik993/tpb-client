@@ -1,0 +1,1453 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="google-site-verification" content="bERYeomIC5eBWlPLupPPYPYGA9GvAUKzFHh3WIw24Xs">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml"
+          title="Search The Pirate Bay">
+    <link rel="stylesheet" type="text/css" href="//thepiratebay.org/static/css/pirate6.css">
+    <link rel="dns-prefetch" href="//syndication.exoclick.com/">
+    <link rel="dns-prefetch" href="//main.exoclick.com/">
+    <link rel="dns-prefetch" href="//static-ssl.exoclick.com/">
+    <link rel="dns-prefetch" href="//ads.exoclick.com/">
+    <link rel="canonical" href="//thepiratebay.org/search/Banshee/0/99/0">
+    <style type="text/css">
+        .searchBox {
+            margin: 6px;
+            width: 300px;
+            vertical-align: middle;
+            padding: 2px;
+            background-image: url('//thepiratebay.org/static/img/icon-https.gif');
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        .detLink {
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+
+        .detDesc {
+            color: #4e5456;
+        }
+
+        .detDesc a:hover {
+            color: #000099;
+            text-decoration: underline;
+        }
+
+        .sortby {
+            text-align: left;
+            float: left;
+        }
+
+        .detName {
+            padding-top: 3px;
+            padding-bottom: 2px;
+        }
+
+        .viewswitch {
+            font-style: normal;
+            float: right;
+            text-align: right;
+            font-weight: normal;
+        }
+    </style>
+    <script src="//thepiratebay.org/static/js/jquery.min.js" type="text/javascript"></script>
+    <script src="//thepiratebay.org/static/js/tpb.js" type="text/javascript"></script>
+    <meta name="description"
+          content="Search for and download any torrent from the pirate bay using search query Banshee. Direct download via magnet link.">
+    <meta name="keywords" content="Banshee direct download torrent magnet tpb piratebay search">
+    <script language="javascript" type="text/javascript">if (top.location != self.location) {
+        top.location.replace(self.location);
+    }</script>
+</head>
+<body>
+<div id="header">
+    <form method="get" id="q" action="/s/">
+        <a href="/" class="img"><img src="//thepiratebay.org/static/img/tpblogo_sm_ny.gif" id="TPBlogo"
+                                     alt="The Pirate Bay"></a>
+        <b><a href="/" title="Search Torrents">Search Torrents</a></b>&nbsp;&nbsp;|&nbsp;
+        <a href="/browse" title="Browse Torrents">Browse Torrents</a>&nbsp;&nbsp;|&nbsp;
+        <a href="/recent" title="Recent Torrent">Recent Torrents</a>&nbsp;&nbsp;|&nbsp;
+        <a href="/tv/" title="TV shows">TV shows</a>&nbsp;&nbsp;|&nbsp;
+        <a href="/music" title="Music">Music</a>&nbsp;&nbsp;|&nbsp;
+        <a href="/top" title="Top 100">Top 100</a>
+        <br>
+        <input type="search" class="inputbox" title="Pirate Search" name="q" placeholder="Search here..."
+               value="Banshee">
+        <input value="Pirate Search" type="submit" class="submitbutton" $disabled>
+        <br>
+        <label for="audio" title="Audio"><input id="audio" name="audio" onclick="javascript:rmAll();" type="checkbox">Audio</label>
+        <label for="video" title="Video"><input id="video" name="video" onclick="javascript:rmAll();" type="checkbox">Video</label>
+        <label for="apps" title="Applications"><input id="apps" name="apps" onclick="javascript:rmAll();"
+                                                      type="checkbox">Applications</label>
+        <label for="games" title="Games"><input id="games" name="games" onclick="javascript:rmAll();" type="checkbox">Games</label>
+        <label for="porn" title="Porn"><input id="porn" name="porn" onclick="javascript:rmAll();"
+                                              type="checkbox">Porn</label>
+        <label for="other" title="Other"><input id="other" name="other" onclick="javascript:rmAll();" type="checkbox">Other</label>
+        <select id="category" name="category" onchange="javascript:setAll();">
+            <option value="0">All</option>
+            <optgroup label="Audio">
+                <option value="101">Music</option>
+                <option value="102">Audio books</option>
+                <option value="103">Sound clips</option>
+                <option value="104">FLAC</option>
+                <option value="199">Other</option>
+            </optgroup>
+            <optgroup label="Video">
+                <option value="201">Movies</option>
+                <option value="202">Movies DVDR</option>
+                <option value="203">Music videos</option>
+                <option value="204">Movie clips</option>
+                <option value="205">TV shows</option>
+                <option value="206">Handheld</option>
+                <option value="207">HD - Movies</option>
+                <option value="208">HD - TV shows</option>
+                <option value="209">3D</option>
+                <option value="299">Other</option>
+            </optgroup>
+            <optgroup label="Applications">
+                <option value="301">Windows</option>
+                <option value="302">Mac</option>
+                <option value="303">UNIX</option>
+                <option value="304">Handheld</option>
+                <option value="305">IOS (iPad/iPhone)</option>
+                <option value="306">Android</option>
+                <option value="399">Other OS</option>
+            </optgroup>
+            <optgroup label="Games">
+                <option value="401">PC</option>
+                <option value="402">Mac</option>
+                <option value="403">PSx</option>
+                <option value="404">XBOX360</option>
+                <option value="405">Wii</option>
+                <option value="406">Handheld</option>
+                <option value="407">IOS (iPad/iPhone)</option>
+                <option value="408">Android</option>
+                <option value="499">Other</option>
+            </optgroup>
+            <optgroup label="Porn">
+                <option value="501">Movies</option>
+                <option value="502">Movies DVDR</option>
+                <option value="503">Pictures</option>
+                <option value="504">Games</option>
+                <option value="505">HD - Movies</option>
+                <option value="506">Movie clips</option>
+                <option value="599">Other</option>
+            </optgroup>
+            <optgroup label="Other">
+                <option value="601">E-books</option>
+                <option value="602">Comics</option>
+                <option value="603">Pictures</option>
+                <option value="604">Covers</option>
+                <option value="605">Physibles</option>
+                <option value="699">Other</option>
+            </optgroup>
+        </select>
+        <input type="hidden" name="page" value="0">
+        <input type="hidden" name="orderby" value="99">
+    </form>
+</div>
+<!-- // div:header -->
+<h2><span>Search results: Banshee</span>&nbsp;Displaying hits from 0 to 30 (approx 666 found)</h2>
+<div id="SearchResults">
+    <div id="content">
+        <div id="sky-right">
+            <iframe src="//thepiratebay.org/static/ads/exo_na/sky2.html" width="160" height="600" frameborder="0"
+                    scrolling="no"></iframe>
+        </div>
+        <iframe src="//thepiratebay.org/static/ads/exo_na/center.html" id="sky-center" width="728" height="90"
+                frameborder="0" scrolling="no"></iframe>
+        <div id="main-content">
+            <table id="searchResult">
+                <thead id="tableHead">
+                <tr class="header">
+                    <th><a href="/search/Banshee/0/13/0" title="Order by Type">Type</a></th>
+                    <th>
+                        <div class="sortby">
+                            <a href="/search/Banshee/0/1/0" title="Order by Name">Name</a>
+                        </div>
+                        <div class="viewswitch">
+                            View: Single /
+                            <a href="/switchview.php?view=d">Double</a>&nbsp;
+                        </div>
+                    </th>
+                    <th><a href="/search/Banshee/0/3/0" title="Order by Uploaded">Uploaded</a></th>
+                    <th>&nbsp;</th>
+                    <th><a href="/search/Banshee/0/5/0" title="Order by Size">Size</a></th>
+                    <th><abbr title="Seeders"><a href="/search/Banshee/0/8/0" title="Order by Seeders">SE</a></abbr>
+                    </th>
+                    <th><abbr title="Leechers"><a href="/search/Banshee/0/9/0" title="Order by Leechers">LE</a></abbr>
+                    </th>
+                    <th><span style="white-space: nowrap;"><a href="/search/Banshee/0/11/0" title="Order by ULed by">ULed by</a></span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/15256679/Banshee.S04E02.FRENCH.LD.HDTV.XviD-ZT"
+                           title="Details for Banshee.S04E02.FRENCH.LD.HDTV.XviD-ZT">Banshee.S04E02.FRENCH.LD.HDTV.XviD-ZT</a>
+                    </td>
+                    <td>Today&nbsp;06:50</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:552f42a4601f245a89d95c683f235d5de1591306&amp;dn=Banshee.S04E02.FRENCH.LD.HDTV.XviD-ZT&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDo1NTJmNDJhNDYwMWYyNDVhODlkOTVjNjgzZjIzNWQ1ZGUxNTkxMzA2JmRuPUJhbnNoZWUuUzA0RTAyLkZSRU5DSC5MRC5IRFRWLlh2aUQtWlQmdHI9dWRwJTNBJTJGJTJGdHJhY2tlci5vcGVuYml0dG9ycmVudC5jb20lM0E4MCZ0cj11ZHAlM0ElMkYlMkZvcGVuLmRlbW9uaWkuY29tJTNBMTMzNyZ0cj11ZHAlM0ElMkYlMkZ0cmFja2VyLmNvcHBlcnN1cmZlci50ayUzQTY5NjkmdHI9dWRwJTNBJTJGJTJGZXhvZHVzLmRlc3luYy5jb20lM0E2OTY5&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <a href="/user/Ctrlme"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP"
+                                                        title="VIP" style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">392.33&nbsp;MiB</td>
+                    <td align="right">1083</td>
+                    <td align="right">211</td>
+                    <td><a href="/user/Ctrlme/" title="Browse Ctrlme">Ctrlme</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14616699/Banshee.S04E07.HDTV.x264-FUM[ettv]"
+                           title="Details for Banshee.S04E07.HDTV.x264-FUM[ettv]">Banshee.S04E07.HDTV.x264-FUM[ettv]</a>
+                    </td>
+                    <td>05-14&nbsp;06:12</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:e6ef2ec4ccd7f81293439551bbc4907d367fbdd4&amp;dn=Banshee.S04E07.HDTV.x264-FUM%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDplNmVmMmVjNGNjZDdmODEyOTM0Mzk1NTFiYmM0OTA3ZDM2N2ZiZGQ0JmRuPUJhbnNoZWUuUzA0RTA3LkhEVFYueDI2NC1GVU0lNUJldHR2JTVEJnRyPXVkcCUzQSUyRiUyRnRyYWNrZXIub3BlbmJpdHRvcnJlbnQuY29tJTNBODAmdHI9dWRwJTNBJTJGJTJGb3Blbi5kZW1vbmlpLmNvbSUzQTEzMzcmdHI9dWRwJTNBJTJGJTJGdHJhY2tlci5jb3BwZXJzdXJmZXIudGslM0E2OTY5JnRyPXVkcCUzQSUyRiUyRmV4b2R1cy5kZXN5bmMuY29tJTNBNjk2OQ==&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments."
+                                 title="This torrent has 1 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">247.27&nbsp;MiB</td>
+                    <td align="right">136</td>
+                    <td align="right">10</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14666239/Banshee.S04E08.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S04E08.HDTV.x264-KILLERS[ettv]">Banshee.S04E08.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>05-21&nbsp;05:49</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:a73f79897ac56bd6c9159b1234bb50a99d5091b4&amp;dn=Banshee.S04E08.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDphNzNmNzk4OTdhYzU2YmQ2YzkxNTliMTIzNGJiNTBhOTlkNTA5MWI0JmRuPUJhbnNoZWUuUzA0RTA4LkhEVFYueDI2NC1LSUxMRVJTJTVCZXR0diU1RCZ0cj11ZHAlM0ElMkYlMkZ0cmFja2VyLm9wZW5iaXR0b3JyZW50LmNvbSUzQTgwJnRyPXVkcCUzQSUyRiUyRm9wZW4uZGVtb25paS5jb20lM0ExMzM3JnRyPXVkcCUzQSUyRiUyRnRyYWNrZXIuY29wcGVyc3VyZmVyLnRrJTNBNjk2OSZ0cj11ZHAlM0ElMkYlMkZleG9kdXMuZGVzeW5jLmNvbSUzQTY5Njk=&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments."
+                                 title="This torrent has 1 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">483.45&nbsp;MiB</td>
+                    <td align="right">120</td>
+                    <td align="right">6</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14345816/Banshee.S04E03.HDTV.x264-FUM[ettv]"
+                           title="Details for Banshee.S04E03.HDTV.x264-FUM[ettv]">Banshee.S04E03.HDTV.x264-FUM[ettv]</a>
+                    </td>
+                    <td>04-16&nbsp;08:18</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:b1b4b14ca7c4bb75082818f25ac8cd1a3045c7e2&amp;dn=Banshee.S04E03.HDTV.x264-FUM%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDpiMWI0YjE0Y2E3YzRiYjc1MDgyODE4ZjI1YWM4Y2QxYTMwNDVjN2UyJmRuPUJhbnNoZWUuUzA0RTAzLkhEVFYueDI2NC1GVU0lNUJldHR2JTVEJnRyPXVkcCUzQSUyRiUyRnRyYWNrZXIub3BlbmJpdHRvcnJlbnQuY29tJTNBODAmdHI9dWRwJTNBJTJGJTJGb3Blbi5kZW1vbmlpLmNvbSUzQTEzMzcmdHI9dWRwJTNBJTJGJTJGdHJhY2tlci5jb3BwZXJzdXJmZXIudGslM0E2OTY5JnRyPXVkcCUzQSUyRiUyRmV4b2R1cy5kZXN5bmMuY29tJTNBNjk2OQ==&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments."
+                                 title="This torrent has 1 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">333.35&nbsp;MiB</td>
+                    <td align="right">119</td>
+                    <td align="right">8</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14403308/Banshee.S04E04.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S04E04.HDTV.x264-KILLERS[ettv]">Banshee.S04E04.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>04-23&nbsp;05:03</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:1e6b5df8090109080f48020d2403eb2ea58f07c1&amp;dn=Banshee.S04E04.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDoxZTZiNWRmODA5MDEwOTA4MGY0ODAyMGQyNDAzZWIyZWE1OGYwN2MxJmRuPUJhbnNoZWUuUzA0RTA0LkhEVFYueDI2NC1LSUxMRVJTJTVCZXR0diU1RCZ0cj11ZHAlM0ElMkYlMkZ0cmFja2VyLm9wZW5iaXR0b3JyZW50LmNvbSUzQTgwJnRyPXVkcCUzQSUyRiUyRm9wZW4uZGVtb25paS5jb20lM0ExMzM3JnRyPXVkcCUzQSUyRiUyRnRyYWNrZXIuY29wcGVyc3VyZmVyLnRrJTNBNjk2OSZ0cj11ZHAlM0ElMkYlMkZleG9kdXMuZGVzeW5jLmNvbSUzQTY5Njk=&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 4 comments."
+                                 title="This torrent has 4 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">329.63&nbsp;MiB</td>
+                    <td align="right">110</td>
+                    <td align="right">9</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14547089/Banshee.S04E06.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S04E06.HDTV.x264-KILLERS[ettv]">Banshee.S04E06.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>05-07&nbsp;05:15</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:9d1595694966425cd685ecf1cba7acbb28bed37a&amp;dn=Banshee.S04E06.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDo5ZDE1OTU2OTQ5NjY0MjVjZDY4NWVjZjFjYmE3YWNiYjI4YmVkMzdhJmRuPUJhbnNoZWUuUzA0RTA2LkhEVFYueDI2NC1LSUxMRVJTJTVCZXR0diU1RCZ0cj11ZHAlM0ElMkYlMkZ0cmFja2VyLm9wZW5iaXR0b3JyZW50LmNvbSUzQTgwJnRyPXVkcCUzQSUyRiUyRm9wZW4uZGVtb25paS5jb20lM0ExMzM3JnRyPXVkcCUzQSUyRiUyRnRyYWNrZXIuY29wcGVyc3VyZmVyLnRrJTNBNjk2OSZ0cj11ZHAlM0ElMkYlMkZleG9kdXMuZGVzeW5jLmNvbSUzQTY5Njk=&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">305.22&nbsp;MiB</td>
+                    <td align="right">107</td>
+                    <td align="right">2</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14138262/Banshee.S04E01.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S04E01.HDTV.x264-KILLERS[ettv]">Banshee.S04E01.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>04-02&nbsp;05:14</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:3b93e9c4dc5396baa50601f5d863a1e82e8f1fac&amp;dn=Banshee.S04E01.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDozYjkzZTljNGRjNTM5NmJhYTUwNjAxZjVkODYzYTFlODJlOGYxZmFjJmRuPUJhbnNoZWUuUzA0RTAxLkhEVFYueDI2NC1LSUxMRVJTJTVCZXR0diU1RCZ0cj11ZHAlM0ElMkYlMkZ0cmFja2VyLm9wZW5iaXR0b3JyZW50LmNvbSUzQTgwJnRyPXVkcCUzQSUyRiUyRm9wZW4uZGVtb25paS5jb20lM0ExMzM3JnRyPXVkcCUzQSUyRiUyRnRyYWNrZXIuY29wcGVyc3VyZmVyLnRrJTNBNjk2OSZ0cj11ZHAlM0ElMkYlMkZleG9kdXMuZGVzeW5jLmNvbSUzQTY5Njk=&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 3 comments."
+                                 title="This torrent has 3 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">437.63&nbsp;MiB</td>
+                    <td align="right">93</td>
+                    <td align="right">5</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14482770/Banshee.S04E05.PROPER.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S04E05.PROPER.HDTV.x264-KILLERS[ettv]">Banshee.S04E05.PROPER.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>04-30&nbsp;17:06</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:458be388cb0371a6bc93c29ea1dd648ce80b1a4a&amp;dn=Banshee.S04E05.PROPER.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDo0NThiZTM4OGNiMDM3MWE2YmM5M2MyOWVhMWRkNjQ4Y2U4MGIxYTRhJmRuPUJhbnNoZWUuUzA0RTA1LlBST1BFUi5IRFRWLngyNjQtS0lMTEVSUyU1QmV0dHYlNUQmdHI9dWRwJTNBJTJGJTJGdHJhY2tlci5vcGVuYml0dG9ycmVudC5jb20lM0E4MCZ0cj11ZHAlM0ElMkYlMkZvcGVuLmRlbW9uaWkuY29tJTNBMTMzNyZ0cj11ZHAlM0ElMkYlMkZ0cmFja2VyLmNvcHBlcnN1cmZlci50ayUzQTY5NjkmdHI9dWRwJTNBJTJGJTJGZXhvZHVzLmRlc3luYy5jb20lM0E2OTY5&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">316.57&nbsp;MiB</td>
+                    <td align="right">80</td>
+                    <td align="right">0</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14255007/Banshee.S04E02.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S04E02.HDTV.x264-KILLERS[ettv]">Banshee.S04E02.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>04-09&nbsp;05:05</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:870d3dcb59c41b8ae89db7fdf17447383d80db62&amp;dn=Banshee.S04E02.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDo4NzBkM2RjYjU5YzQxYjhhZTg5ZGI3ZmRmMTc0NDczODNkODBkYjYyJmRuPUJhbnNoZWUuUzA0RTAyLkhEVFYueDI2NC1LSUxMRVJTJTVCZXR0diU1RCZ0cj11ZHAlM0ElMkYlMkZ0cmFja2VyLm9wZW5iaXR0b3JyZW50LmNvbSUzQTgwJnRyPXVkcCUzQSUyRiUyRm9wZW4uZGVtb25paS5jb20lM0ExMzM3JnRyPXVkcCUzQSUyRiUyRnRyYWNrZXIuY29wcGVyc3VyZmVyLnRrJTNBNjk2OSZ0cj11ZHAlM0ElMkYlMkZleG9kdXMuZGVzeW5jLmNvbSUzQTY5Njk=&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 6 comments."
+                                 title="This torrent has 6 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">310.17&nbsp;MiB</td>
+                    <td align="right">77</td>
+                    <td align="right">4</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11754316/Banshee_Season_3_HDTV.XviD-AFG[Pawulon]"
+                           title="Details for Banshee Season 3 HDTV.XviD-AFG[Pawulon]">Banshee Season 3
+                        HDTV.XviD-AFG[Pawulon]</a></td>
+                    <td>03-14&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:2c6521077def925d9dcad9097472e5ec8114f4b3&amp;dn=Banshee+Season+3+HDTV.XviD-AFG%5BPawulon%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDoyYzY1MjEwNzdkZWY5MjVkOWRjYWQ5MDk3NDcyZTVlYzgxMTRmNGIzJmRuPUJhbnNoZWUrU2Vhc29uKzMrSERUVi5YdmlELUFGRyU1QlBhd3Vsb24lNUQmdHI9dWRwJTNBJTJGJTJGdHJhY2tlci5vcGVuYml0dG9ycmVudC5jb20lM0E4MCZ0cj11ZHAlM0ElMkYlMkZvcGVuLmRlbW9uaWkuY29tJTNBMTMzNyZ0cj11ZHAlM0ElMkYlMkZ0cmFja2VyLmNvcHBlcnN1cmZlci50ayUzQTY5NjkmdHI9dWRwJTNBJTJGJTJGZXhvZHVzLmRlc3luYy5jb20lM0E2OTY5&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments."
+                                 title="This torrent has 1 comments.">
+                            <a href="/user/krzysiekvip2"><img src="//thepiratebay.org/static/img/trusted.png"
+                                                              alt="Trusted" title="Trusted" style="width:11px;"
+                                                              border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">4.17&nbsp;GiB</td>
+                    <td align="right">53</td>
+                    <td align="right">42</td>
+                    <td><a href="/user/krzysiekvip2/" title="Browse krzysiekvip2">krzysiekvip2</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11753976/Banshee.S03E10.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S03E10.HDTV.x264-KILLERS[ettv]">Banshee.S03E10.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>03-14&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:4e0c4f9278ec40226e6ff03322b05d1134e0b838&amp;dn=Banshee.S03E10.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="//cdn.bitx.tv/bx.php?torrent=bWFnbmV0Oj94dD11cm46YnRpaDo0ZTBjNGY5Mjc4ZWM0MDIyNmU2ZmYwMzMyMmIwNWQxMTM0ZTBiODM4JmRuPUJhbnNoZWUuUzAzRTEwLkhEVFYueDI2NC1LSUxMRVJTJTVCZXR0diU1RCZ0cj11ZHAlM0ElMkYlMkZ0cmFja2VyLm9wZW5iaXR0b3JyZW50LmNvbSUzQTgwJnRyPXVkcCUzQSUyRiUyRm9wZW4uZGVtb25paS5jb20lM0ExMzM3JnRyPXVkcCUzQSUyRiUyRnRyYWNrZXIuY29wcGVyc3VyZmVyLnRrJTNBNjk2OSZ0cj11ZHAlM0ElMkYlMkZleG9kdXMuZGVzeW5jLmNvbSUzQTY5Njk=&amp;affid=1337&amp;imdb="
+                               target="_blank" title="Play now using BitX"><img
+                                    src="//thepiratebay.org/static/img/icons/icon-bitx.png" alt="Play link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 3 comments."
+                                 title="This torrent has 3 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">426.63&nbsp;MiB</td>
+                    <td align="right">52</td>
+                    <td align="right">5</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11699625/Banshee.S03E06.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S03E06.HDTV.x264-KILLERS[ettv]">Banshee.S03E06.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>02-14&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:bfe215b2c3075981b450f514b69a60bff786d997&amp;dn=Banshee.S03E06.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 2 comments."
+                                 title="This torrent has 2 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">368.57&nbsp;MiB</td>
+                    <td align="right">42</td>
+                    <td align="right">4</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11739288/Banshee.S03E09.HDTV.x264-ASAP[ettv]"
+                           title="Details for Banshee.S03E09.HDTV.x264-ASAP[ettv]">Banshee.S03E09.HDTV.x264-ASAP[ettv]</a>
+                    </td>
+                    <td>03-07&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:acc7bbd8157062ff4c7f9f9aa4a817513841a3b9&amp;dn=Banshee.S03E09.HDTV.x264-ASAP%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments."
+                                 title="This torrent has 1 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">306.79&nbsp;MiB</td>
+                    <td align="right">40</td>
+                    <td align="right">10</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11671425/Banshee.S03E04.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S03E04.HDTV.x264-KILLERS[ettv]">Banshee.S03E04.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>01-31&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:f267141d88960ec0596d61ed3641c11570c15d65&amp;dn=Banshee.S03E04.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 5 comments."
+                                 title="This torrent has 5 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">421.11&nbsp;MiB</td>
+                    <td align="right">35</td>
+                    <td align="right">5</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11714451/Banshee.S03E07.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S03E07.HDTV.x264-KILLERS[ettv]">Banshee.S03E07.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>02-21&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:9b39ce520a0246d2c1276a103c61e7aa0bbe092d&amp;dn=Banshee.S03E07.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments."
+                                 title="This torrent has 1 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">526.69&nbsp;MiB</td>
+                    <td align="right">34</td>
+                    <td align="right">5</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11685062/Banshee.S03E05.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S03E05.HDTV.x264-KILLERS[ettv]">Banshee.S03E05.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>02-07&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:1696b82e875abbdb4dfeee7309ad4c6de6c0e160&amp;dn=Banshee.S03E05.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 4 comments."
+                                 title="This torrent has 4 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">321.35&nbsp;MiB</td>
+                    <td align="right">33</td>
+                    <td align="right">4</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11755931/Banshee_S03E10_HDTV_x264-KILLERS_[eztv]"
+                           title="Details for Banshee S03E10 HDTV x264-KILLERS [eztv]">Banshee S03E10 HDTV x264-KILLERS
+                        [eztv]</a></td>
+                    <td>03-15&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:1b9c8dcb9f8c106448c2d7db9ed12eeb2068ee4f&amp;dn=Banshee+S03E10+HDTV+x264-KILLERS+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="/user/eztv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">426.62&nbsp;MiB</td>
+                    <td align="right">32</td>
+                    <td align="right">0</td>
+                    <td><a href="/user/eztv/" title="Browse eztv">eztv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14666267/Banshee.S04E08.HDTV.XviD-FUM[ettv]"
+                           title="Details for Banshee.S04E08.HDTV.XviD-FUM[ettv]">Banshee.S04E08.HDTV.XviD-FUM[ettv]</a>
+                    </td>
+                    <td>05-21&nbsp;06:05</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:3d07985486e0a4a32a32d348a5859c2c43d1de8e&amp;dn=Banshee.S04E08.HDTV.XviD-FUM%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">449.53&nbsp;MiB</td>
+                    <td align="right">32</td>
+                    <td align="right">7</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11726836/Banshee_S03E08_HDTV_x264-KILLERS_[eztv]"
+                           title="Details for Banshee S03E08 HDTV x264-KILLERS [eztv]">Banshee S03E08 HDTV x264-KILLERS
+                        [eztv]</a></td>
+                    <td>02-28&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:711ed6918ccefe184d82ec04f634d506644245db&amp;dn=Banshee+S03E08+HDTV+x264-KILLERS+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments."
+                                 title="This torrent has 1 comments.">
+                            <a href="/user/eztv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">451.22&nbsp;MiB</td>
+                    <td align="right">30</td>
+                    <td align="right">3</td>
+                    <td><a href="/user/eztv/" title="Browse eztv">eztv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/8010663/Banshee.S01E01.HDTV.x264-EVOLVE.[VTV].mp4"
+                           title="Details for Banshee.S01E01.HDTV.x264-EVOLVE.[VTV].mp4">Banshee.S01E01.HDTV.x264-EVOLVE.[VTV].mp4</a>
+                    </td>
+                    <td>01-12&nbsp;2013</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:b6440a10f4f3dc6aeaf5e6b39148f0396bdc800d&amp;dn=Banshee.S01E01.HDTV.x264-EVOLVE.%5BVTV%5D.mp4&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 8 comments."
+                                 title="This torrent has 8 comments.">
+                            <a href="/user/VTV"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                     style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">423.17&nbsp;MiB</td>
+                    <td align="right">28</td>
+                    <td align="right">6</td>
+                    <td><a href="/user/VTV/" title="Browse VTV">VTV</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11699729/Banshee_S03E06_HDTV_x264-KILLERS_[eztv]"
+                           title="Details for Banshee S03E06 HDTV x264-KILLERS [eztv]">Banshee S03E06 HDTV x264-KILLERS
+                        [eztv]</a></td>
+                    <td>02-14&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:729acd19ed48fedd70dbd639a73db11168a62d31&amp;dn=Banshee+S03E06+HDTV+x264-KILLERS+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments."
+                                 title="This torrent has 1 comments.">
+                            <a href="/user/eztv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">368.56&nbsp;MiB</td>
+                    <td align="right">28</td>
+                    <td align="right">1</td>
+                    <td><a href="/user/eztv/" title="Browse eztv">eztv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11726821/Banshee.S03E08.HDTV.x264-KILLERS[ettv]"
+                           title="Details for Banshee.S03E08.HDTV.x264-KILLERS[ettv]">Banshee.S03E08.HDTV.x264-KILLERS[ettv]</a>
+                    </td>
+                    <td>02-28&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:2d8cd79b47c8bc2e4f90fbbc485616aaf9d8af19&amp;dn=Banshee.S03E08.HDTV.x264-KILLERS%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 2 comments."
+                                 title="This torrent has 2 comments.">
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">451.23&nbsp;MiB</td>
+                    <td align="right">28</td>
+                    <td align="right">5</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/208" title="More from this category">Video &gt; HD - TV
+                        shows</a></td>
+                    <td><a href="/torrent/12797719/Banshee_Season_2_S02_1080p_Web_x265_HEVC_AAC_5.1_JoyBell"
+                           title="Details for Banshee Season 2 S02 1080p Web x265 HEVC AAC 5.1 JoyBell">Banshee Season 2
+                        S02 1080p Web x265 HEVC AAC 5.1 JoyBell</a></td>
+                    <td>11-20&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:b1d2facefd6f01c9c2d938000d4fe42ac8cf7cf4&amp;dn=Banshee+Season+2+S02+1080p+Web+x265+HEVC+AAC+5.1+JoyBell&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">3.92&nbsp;GiB</td>
+                    <td align="right">28</td>
+                    <td align="right">1</td>
+                    <td><a href="/user/garumon/" title="Browse garumon">garumon</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14616701/Banshee.S04E07.HDTV.XviD-FUM[ettv]"
+                           title="Details for Banshee.S04E07.HDTV.XviD-FUM[ettv]">Banshee.S04E07.HDTV.XviD-FUM[ettv]</a>
+                    </td>
+                    <td>05-14&nbsp;06:13</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:60e69ca017c0ee1578d654cf9ef73bfa176ff2db&amp;dn=Banshee.S04E07.HDTV.XviD-FUM%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">398.31&nbsp;MiB</td>
+                    <td align="right">28</td>
+                    <td align="right">0</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11740046/Banshee_S03E09_HDTV_x264-ASAP_[eztv]"
+                           title="Details for Banshee S03E09 HDTV x264-ASAP [eztv]">Banshee S03E09 HDTV x264-ASAP
+                        [eztv]</a></td>
+                    <td>03-07&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:b6535cc8f65822af478b1e6a8bff6be08ed97138&amp;dn=Banshee+S03E09+HDTV+x264-ASAP+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="/user/eztv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">299.93&nbsp;MiB</td>
+                    <td align="right">26</td>
+                    <td align="right">0</td>
+                    <td><a href="/user/eztv/" title="Browse eztv">eztv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11671620/Banshee.S03E04.HDTV.x264-KILLERS.mp4"
+                           title="Details for Banshee.S03E04.HDTV.x264-KILLERS.mp4">Banshee.S03E04.HDTV.x264-KILLERS.mp4</a>
+                    </td>
+                    <td>01-31&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:9f003d014bcb256190a98b85722733e7ce41b715&amp;dn=Banshee.S03E04.HDTV.x264-KILLERS.mp4&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="/user/darkj6"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP"
+                                                        title="VIP" style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">421.1&nbsp;MiB</td>
+                    <td align="right">25</td>
+                    <td align="right">1</td>
+                    <td><a href="/user/darkj6/" title="Browse darkj6">darkj6</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/11714748/Banshee_S03E07_HDTV_x264-KILLERS_[eztv]"
+                           title="Details for Banshee S03E07 HDTV x264-KILLERS [eztv]">Banshee S03E07 HDTV x264-KILLERS
+                        [eztv]</a></td>
+                    <td>02-21&nbsp;2015</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:e479041cd11f89eb942bab014b0e5d7058ae0b89&amp;dn=Banshee+S03E07+HDTV+x264-KILLERS+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 1 comments."
+                                 title="This torrent has 1 comments.">
+                            <a href="/user/eztv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">526.67&nbsp;MiB</td>
+                    <td align="right">25</td>
+                    <td align="right">1</td>
+                    <td><a href="/user/eztv/" title="Browse eztv">eztv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/8151542/Banshee_S01E06_HDTV_x264-2HD_[eztv]"
+                           title="Details for Banshee S01E06 HDTV x264-2HD [eztv]">Banshee S01E06 HDTV x264-2HD
+                        [eztv]</a></td>
+                    <td>02-16&nbsp;2013</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:c670e4e61eb52ef38ac219d7a82bd3da7946341a&amp;dn=Banshee+S01E06+HDTV+x264-2HD+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 3 comments."
+                                 title="This torrent has 3 comments.">
+                            <a href="/user/eztv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">369.93&nbsp;MiB</td>
+                    <td align="right">23</td>
+                    <td align="right">10</td>
+                    <td><a href="/user/eztv/" title="Browse eztv">eztv</a></td>
+                </tr>
+                <tr>
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/8234529/Banshee_S01E09_HDTV_x264-2HD_[eztv]"
+                           title="Details for Banshee S01E09 HDTV x264-2HD [eztv]">Banshee S01E09 HDTV x264-2HD
+                        [eztv]</a></td>
+                    <td>03-09&nbsp;2013</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:9239078352248944096bb5881725158d6084f18f&amp;dn=Banshee+S01E09+HDTV+x264-2HD+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <img src="//thepiratebay.org/static/img/icon_comment.gif" alt="This torrent has 8 comments."
+                                 title="This torrent has 8 comments.">
+                            <a href="/user/eztv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">270.68&nbsp;MiB</td>
+                    <td align="right">23</td>
+                    <td align="right">6</td>
+                    <td><a href="/user/eztv/" title="Browse eztv">eztv</a></td>
+                </tr>
+                <tr class="alt">
+                    <td class="vertTh"><a href="/browse/205" title="More from this category">Video &gt; TV shows</a>
+                    </td>
+                    <td><a href="/torrent/14482773/Banshee.S04E05.HDTV.XviD-FUM[ettv]"
+                           title="Details for Banshee.S04E05.HDTV.XviD-FUM[ettv]">Banshee.S04E05.HDTV.XviD-FUM[ettv]</a>
+                    </td>
+                    <td>04-30&nbsp;17:06</td>
+                    <td>
+                        <nobr>
+                            <a href="magnet:?xt=urn:btih:3ceb263cc2346dd362c7b5020b88e0bb8ab201a2&amp;dn=Banshee.S04E05.HDTV.XviD-FUM%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969"
+                               title="Download this torrent using magnet"><img
+                                    src="//thepiratebay.org/static/img/icon-magnet.gif" alt="Magnet link"></a>
+                            <a href="/user/ettv"><img src="//thepiratebay.org/static/img/vip.gif" alt="VIP" title="VIP"
+                                                      style="width:11px;" border="0"></a>
+                        </nobr>
+                    </td>
+                    <td align="right">427.9&nbsp;MiB</td>
+                    <td align="right">23</td>
+                    <td align="right">0</td>
+                    <td><a href="/user/ettv/" title="Browse ettv">ettv</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div align="center">
+            1&nbsp;
+            <a href="/search/Banshee/1/7//">2</a>&nbsp;
+            <a href="/search/Banshee/2/7//">3</a>&nbsp;
+            <a href="/search/Banshee/3/7//">4</a>&nbsp;
+            <a href="/search/Banshee/4/7//">5</a>&nbsp;
+            <a href="/search/Banshee/5/7//">6</a>&nbsp;
+            <a href="/search/Banshee/6/7//">7</a>&nbsp;
+            <a href="/search/Banshee/7/7//">8</a>&nbsp;
+            <a href="/search/Banshee/8/7//">9</a>&nbsp;
+            <a href="/search/Banshee/9/7//">10</a>&nbsp;
+            <a href="/search/Banshee/10/7//">11</a>&nbsp;
+            <a href="/search/Banshee/11/7//">12</a>&nbsp;
+            <a href="/search/Banshee/12/7//">13</a>&nbsp;
+            <a href="/search/Banshee/13/7//">14</a>&nbsp;
+            <a href="/search/Banshee/14/7//">15</a>&nbsp;
+            <a href="/search/Banshee/15/7//">16</a>&nbsp;
+            <a href="/search/Banshee/16/7//">17</a>&nbsp;
+            <a href="/search/Banshee/17/7//">18</a>&nbsp;
+            <a href="/search/Banshee/18/7//">19</a>&nbsp;
+            <a href="/search/Banshee/19/7//">20</a>&nbsp;
+            <a href="/search/Banshee/20/7//">21</a>&nbsp;
+            <a href="/search/Banshee/21/7//">22</a>&nbsp;
+            <a href="/search/Banshee/22/7//">23</a>&nbsp;
+            <a href="/search/Banshee/1/7//"><img src="//thepiratebay.org/static/img/next.gif" border="0" alt="Next"></a>&nbsp;
+        </div>
+        <div class="ads" id="sky-banner">
+            <iframe src="//thepiratebay.org/static/ads/exo_na/sky1.html" width="120" height="600" frameborder="0"
+                    scrolling="no"></iframe>
+        </div>
+        <script type="text/javascript" src="//thepiratebay.org/static/ads/ad-scroll.js"></script>
+    </div>
+</div>
+<!-- //div:content -->
+<div id="foot" style="text-align:center;margin-top:1em;">
+    <iframe src="//thepiratebay.org/static/ads/exo_na/bottom.html" width="728" height="90" frameborder="0"
+            scrolling="no"></iframe>
+    <p><a href="/login" title="Login">Login</a> | <a href="/register" title="Register">Register</a> | <a
+            href="/language" title="Select language">Language / Select language</a> | <a href="/about" title="About">About</a>
+        | <a href="/blog" title="Blog">Blog</a> <br>
+        <!--<a href="/contact" title="Contact us">Contact us</a> |--> <a href="/policy" title="Usage policy">Usage
+            policy</a> | <a href="http://uj3wazyk5u4hnvtk.onion" title="TOR">TOR</a> | <a
+                href="http://www.promobay.org/" title="Promo" target="_NEW">Promo</a> | <a href="/doodles"
+                                                                                           title="Doodles">Doodles</a> |
+        <a href="/tags" title="Tag Cloud">Tag Cloud</a> | <a href="http://pirates-forum.org/" title="Forum"
+                                                             target="_blank">Forum</a> <br></p>
+    <br>
+    <a href="http://bitcoin.org" target="_NEW">BitCoin</a>:
+    <b><a href="bitcoin:129TQVAroeehD9fZpzK51NdZGQT4TqifbG">129TQVAroeehD9fZpzK51NdZGQT4TqifbG</a></b>
+    <br>
+    <br>
+    <div id="fbanners">
+        <a href="/rss" class="rss" title="RSS"><img src="//thepiratebay.org/static/img/rss_small.gif" alt="RSS"></a>
+    </div>
+    <!-- // div:fbanners -->
+</div>
+<!-- // div:foot -->
+<script>
+    var _wm_settings = {
+        popunder: {
+            url: 'https://traffic.adxprts.com/?placement=289748&redirect',
+            times: 2,
+            hours: 12.000000,
+            cookie: 'tpbpop',
+            fastbind: true
+        }
+    };
+    var _wm = {
+        initialize: function () {
+            this.ua.initialize()
+        }, array: {
+            is_array: function (a) {
+                return Object.prototype.toString.call(a) === '[object Array]'
+            }, sort: function (a, b, c) {
+                a = a.sort();
+                if (b)a = a.reverse();
+                if (c) {
+                    for (var i = 0; i < a.length; i++) {
+                        var d = a[i];
+                        if (Object.prototype.toString.call(d) === '[object Object]')d = _wm.object.sort(d, b, true); else if (Object.prototype.toString.call(d) === '[object Array]')d = _wm.array.sort(d, b, true);
+                        a[i] = d
+                    }
+                }
+                return a
+            }, random_value: function (a) {
+                return a[Math.floor(a.length * Math.random())]
+            }
+        }, object: {
+            is_object: function (a) {
+                return Object.prototype.toString.call(a) === '[object Object]'
+            }, keys: function (a) {
+                var hasOwnProperty = Object.prototype.hasOwnProperty, hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'), dontEnums = ['toString', 'toLocaleString', 'valueOf', 'hasOwnProperty', 'isPrototypeOf', 'propertyIsEnumerable', 'constructor'], dontEnumsLength = dontEnums.length;
+                var b = [];
+                if (typeof a !== 'object' && typeof a !== 'function' || a === null)return b;
+                for (var c in a) {
+                    if (hasOwnProperty.call(a, c))b.push(c)
+                }
+                if (hasDontEnumBug) {
+                    for (var i = 0; i < dontEnumsLength; i++) {
+                        if (hasOwnProperty.call(a, dontEnums[i]))b.push(dontEnums[i])
+                    }
+                }
+                return b
+            }, sort: function (a, c, d) {
+                var e = _wm.array.sort(_wm.object.keys(a));
+                if (c)e = e.reverse();
+                var b = {};
+                for (var i = 0; i < e.length; i++) {
+                    var f = a[e[i]];
+                    if (d) {
+                        if (_wm.object.is_object(f))f = _wm.object.sort(f, c, true); else if (_wm.array.is_array(f))f = _wm.array.sort(f, c, true)
+                    }
+                    b[e[i]] = f
+                }
+                return b
+            }, iterator: function (b) {
+                this.element = b;
+                this.element_array = _wm.object.keys(b);
+                this.current_index = 0;
+                this.hasNext = function () {
+                    return this.current_index <= this.element_array.length - 1
+                };
+                this.next = function () {
+                    if (this.hasNext()) {
+                        var a = [this.element_array[this.current_index], this.element[this.element_array[this.current_index]]];
+                        this.current_index++;
+                        return a
+                    }
+                    return false
+                }
+            }, random_value: function (a) {
+                return a[_wm.array.random_value(_wm.object.keys(a))]
+            }, length: function (a) {
+                return _wm.object.keys(a).length
+            }
+        }, ua: {
+            initialize: function () {
+                this.maps = {
+                    browser: {
+                        oldsafari: {
+                            major: {'1': ['/8', '/1', '/3'], '2': '/4', '?': '/'},
+                            version: {
+                                '1.0': '/8',
+                                '1.2': '/1',
+                                '1.3': '/3',
+                                '2.0': '/412',
+                                '2.0.2': '/416',
+                                '2.0.3': '/417',
+                                '2.0.4': '/419',
+                                '?': '/'
+                            }
+                        }
+                    },
+                    os: {
+                        windows: {
+                            version: {
+                                'ME': '4.90',
+                                'NT 3.11': 'NT3.51',
+                                'NT 4.0': 'NT4.0',
+                                '2000': 'NT 5.0',
+                                'XP': ['NT 5.1', 'NT 5.2'],
+                                'Vista': 'NT 6.0',
+                                '7': 'NT 6.1',
+                                '8': 'NT 6.2',
+                                '8.1': 'NT 6.3',
+                                'RT': 'ARM'
+                            }
+                        }
+                    }
+                };
+                this.regexes = {
+                    browser: [[/(opera\smini)\/((\d+)?[\w\.-]+)/i, /(opera\s[mobiletab]+).+version\/((\d+)?[\w\.-]+)/i, /(opera).+version\/((\d+)?[\w\.]+)/i, /(opera)[\/\s]+((\d+)?[\w\.]+)/i], ['name', 'version', 'major'], [/\s(opr)\/((\d+)?[\w\.]+)/i], [['name', 'Opera'], 'version', 'major'], [/(kindle)\/((\d+)?[\w\.]+)/i, /(lunascape|maxthon|netfront|jasmine|blazer)[\/\s]?((\d+)?[\w\.]+)*/i, /(avant\s|iemobile|slim|baidu)(?:browser)?[\/\s]?((\d+)?[\w\.]*)/i, /(?:ms|\()(ie)\s((\d+)?[\w\.]+)/i, /(rekonq)((?:\/)[\w\.]+)*/i, /(chromium|flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron)\/((\d+)?[\w\.-]+)/i], ['name', 'version', 'major'], [/(trident).+rv[:\s]((\d+)?[\w\.]+).+like\sgecko/i], [['name', 'IE'], 'version', 'major'], [/(yabrowser)\/((\d+)?[\w\.]+)/i], [['name', 'Yandex'], 'version', 'major'], [/(comodo_dragon)\/((\d+)?[\w\.]+)/i], [['name', /_/g, ' '], 'version', 'major'], [/(chrome|omniweb|arora|[tizenoka]{5}\s?browser)\/v?((\d+)?[\w\.]+)/i], ['name', 'version', 'major'], [/(dolfin)\/((\d+)?[\w\.]+)/i], [['name', 'Dolphin'], 'version', 'major'], [/((?:android.+)crmo|crios)\/((\d+)?[\w\.]+)/i], [['name', 'Chrome'], 'version', 'major'], [/version\/((\d+)?[\w\.]+).+?mobile\/\w+\s(safari)/i], ['version', 'major', ['name', 'Mobile Safari']], [/version\/((\d+)?[\w\.]+).+?(mobile\s?safari|safari)/i], ['version', 'major', 'name'], [/webkit.+?(mobile\s?safari|safari)((\/[\w\.]+))/i], ['name', ['major', _wm.ua.mapper.str, _wm.ua.maps.browser.oldsafari.major], ['version', _wm.ua.mapper.str, _wm.ua.maps.browser.oldsafari.version]], [/(konqueror)\/((\d+)?[\w\.]+)/i, /(webkit|khtml)\/((\d+)?[\w\.]+)/i], ['name', 'version', 'major'], [/(navigator|netscape)\/((\d+)?[\w\.-]+)/i], [['name', 'Netscape'], 'version', 'major'], [/(swiftfox)/i, /(icedragon|iceweasel|camino|chimera|fennec|maemo\sbrowser|minimo|conkeror)[\/\s]?((\d+)?[\w\.\+]+)/i, /(firefox|seamonkey|k-meleon|icecat|iceape|firebird|phoenix)\/((\d+)?[\w\.-]+)/i, /(mozilla)\/((\d+)?[\w\.]+).+rv\:.+gecko\/\d+/i, /(uc\s?browser|polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|qqbrowser)[\/\s]?((\d+)?[\w\.]+)/i, /(links)\s\(((\d+)?[\w\.]+)/i, /(gobrowser)\/?((\d+)?[\w\.]+)*/i, /(ice\s?browser)\/v?((\d+)?[\w\._]+)/i, /(mosaic)[\/\s]((\d+)?[\w\.]+)/i], ['name', 'version', 'major']],
+                    os: [[/(windows)\snt\s6\.2;\s(arm)/i, /(windows\sphone(?:\sos)*|windows\smobile|windows)[\s\/]?([ntce\d\.\s]+\w)/i], ['name', ['version', _wm.ua.mapper.str, _wm.ua.maps.os.windows.version]], [/(win(?=3|9|n)|win\s9x\s)([nt\d\.]+)/i], [['name', 'Windows'], ['version', _wm.ua.mapper.str, _wm.ua.maps.os.windows.version]], [/\((bb)(10);/i], [['name', 'BlackBerry'], 'version'], [/(blackberry)\w*\/?([\w\.]+)*/i, /(tizen)\/([\w\.]+)/i, /(android|webos|palm\os|qnx|bada|rim\stablet\sos|meego)[\/\s-]?([\w\.]+)*/i], ['name', 'version'], [/(symbian\s?os|symbos|s60(?=;))[\/\s-]?([\w\.]+)*/i], [['name', 'Symbian'], 'version'], [/mozilla.+\(mobile;.+gecko.+firefox/i], [['name', 'Firefox OS'], 'version'], [/(nintendo|playstation)\s([wids3portablevu]+)/i, /(mint)[\/\s\(]?(\w+)*/i, /(joli|[kxln]?ubuntu|debian|[open]*suse|gentoo|arch|slackware|fedora|mandriva|centos|pclinuxos|redhat|zenwalk)[\/\s-]?([\w\.-]+)*/i, /(hurd|linux)\s?([\w\.]+)*/i, /(gnu)\s?([\w\.]+)*/i], ['name', 'version'], [/(cros)\s[\w]+\s([\w\.]+\w)/i], [['name', 'Chromium OS'], 'version'], [/(sunos)\s?([\w\.]+\d)*/i], [['name', 'Solaris'], 'version'], [/\s([frentopc-]{0,4}bsd|dragonfly)\s?([\w\.]+)*/i], ['name', 'version'], [/(ip[honead]+)(?:.*os\s*([\w]+)*\slike\smac|;\sopera)/i], [['name', 'iOS'], ['version', /_/g, '.']], [/(mac\sos\sx)\s?([\w\s\.]+\w)*/i], ['name', ['version', /_/g, '.']], [/(haiku)\s(\w+)/i, /(aix)\s((\d)(?=\.|\)|\s)[\w\.]*)*/i, /(macintosh|mac(?=_powerpc)|plan\s9|minix|beos|os\/2|amigaos|morphos|risc\sos)/i, /(unix)\s?([\w\.]+)*/i], ['name', 'version']]
+                }, this.browser = this.get.browser();
+                this.os = this.get.os()
+            },
+            ua: (window && window.navigator && window.navigator.userAgent) ? window.navigator.userAgent : '',
+            get: {
+                browser: function () {
+                    return _wm.ua.mapper.rgx.apply(this, _wm.ua.regexes.browser)
+                }, os: function () {
+                    return _wm.ua.mapper.rgx.apply(this, _wm.ua.regexes.os)
+                }
+            },
+            util: {
+                has: function (a, b) {
+                    return b.toLowerCase().indexOf(a.toLowerCase()) !== -1
+                }, lowerize: function (a) {
+                    return a.toLowerCase()
+                }
+            },
+            mapper: {
+                rgx: function () {
+                    for (var a, i = 0, j, k, p, q, matches, match, args = arguments; i < args.length; i += 2) {
+                        var b = args[i], props = args[i + 1];
+                        if (typeof(a) === 'undefined') {
+                            a = {};
+                            for (p in props) {
+                                q = props[p];
+                                if (typeof(q) === 'object') {
+                                    a[q[0]] = undefined
+                                } else {
+                                    a[q] = undefined
+                                }
+                            }
+                        }
+                        for (j = k = 0; j < b.length; j++) {
+                            matches = b[j].exec(_wm.ua.ua);
+                            if (!!matches) {
+                                for (p = 0; p < props.length; p++) {
+                                    match = matches[++k];
+                                    q = props[p];
+                                    if (typeof(q) === 'object' && q.length > 0) {
+                                        if (q.length == 2) {
+                                            if (typeof(q[1]) == 'function') {
+                                                a[q[0]] = q[1].call(this, match)
+                                            } else {
+                                                a[q[0]] = q[1]
+                                            }
+                                        } else if (q.length == 3) {
+                                            if (typeof(q[1]) === 'function' && !(q[1].exec && q[1].test)) {
+                                                a[q[0]] = match ? q[1].call(this, match, q[2]) : undefined
+                                            } else {
+                                                a[q[0]] = match ? match.replace(q[1], q[2]) : undefined
+                                            }
+                                        } else if (q.length == 4) {
+                                            a[q[0]] = match ? q[3].call(this, match.replace(q[1], q[2])) : undefined
+                                        }
+                                    } else {
+                                        a[q] = match ? match : undefined
+                                    }
+                                }
+                                break
+                            }
+                        }
+                        if (!!matches)break
+                    }
+                    return a
+                }, str: function (a, b) {
+                    for (var i in b) {
+                        if (typeof(b[i]) === 'object' && b[i].length > 0) {
+                            for (var j = 0; j < b[i].length; j++) {
+                                if (_wm.ua.util.has(b[i][j], a)) {
+                                    return (i === '?') ? undefined : i
+                                }
+                            }
+                        } else if (_wm.ua.util.has(b[i], a)) {
+                            return (i === '?') ? undefined : i
+                        }
+                    }
+                    return a
+                }
+            }
+        }, cookie: {
+            get: function (a, b) {
+                var c = new Date();
+                c.setTime(c.getTime());
+                var d = new Date(c.getTime() + (1000 * 60 * 60 * b)).toGMTString();
+                var e = document.cookie.split(';');
+                var f = '';
+                var g = '';
+                var h = [0, d];
+                for (var i = 0; i < e.length; i++) {
+                    f = e[i].split('=');
+                    g = f[0].replace(/^\s+|\s+$/g, '');
+                    if (g == a) {
+                        b_cookie_found = true;
+                        if (f.length > 1) {
+                            h = unescape(f[1]).split('|');
+                            if (h.length == 1)h[1] = d
+                        }
+                        return h
+                    }
+                    f = null;
+                    g = ''
+                }
+                return h
+            }, set: function (a, b, c) {
+                document.cookie = a + '=' + escape(b + '|' + c) + ';expires=' + c + ';path=/'
+            }
+        }, listener: {
+            events: [], add: function (a, b, c, e) {
+                if (e == undefined)e = true;
+                var d = 'on' + b;
+                if (typeof a.addEventListener != 'undefined')a.addEventListener(b, c, e); else if (typeof a.attachEvent != 'undefined')a.attachEvent(d, c); else {
+                    if (typeof a[d] != 'function')a[d] = c; else {
+                        var e = a[d];
+                        a['old_' + d] = e;
+                        a[d] = function () {
+                            e();
+                            return c()
+                        }
+                    }
+                }
+                _wm.listener.events.push(arguments)
+            }, remove: function (a, b, c, e) {
+                if (e == undefined)e = true;
+                var d = 'on' + b;
+                if (typeof a.removeEventListener != 'undefined')a.removeEventListener(b, c, e); else if (typeof a.detachEvent != 'undefined')a.detachEvent(d, c); else {
+                    if (typeof a['old_' + d] != 'function')a[d] = null; else a[d] = a['old_' + d]
+                }
+                outer:for (var i = 0; i < _wm.listener.events.length; i++) {
+                    inner:for (var j = 0; j < _wm.listener.events[i].length; j++) {
+                        if (_wm.listener.events[i][j] !== arguments[j])continue outer
+                    }
+                    _wm.listener.events = _wm.listener.events.slice(0, i).concat(_wm.listener.events.slice(i + 1));
+                    break outer
+                }
+            }, clear: function () {
+                while (_wm.listener.events.length > 0)_wm.listener.remove.apply(undefined, _wm.listener.events[0])
+            }
+        }, format: {}, random: function () {
+            return Math.floor(Math.random() * 1000001)
+        }
+    };
+    _wm.initialize();
+    _wm.format.popunder = {
+        settings: typeof _wm_settings === 'object' && _wm_settings.popunder || false,
+        config: 'width=' + screen.width + ', height=' + screen.height + ',resizable=no,toolbar=no,location=no,directories=no,status=no,menubar=no,copyhistory=no,scrollbars=yes',
+        isBinded: false,
+        isTriggered: false,
+        trigger_stack: [],
+        initialize: function () {
+            if (!_wm.format.popunder.settings) {
+                alert('Popunder configuration need to be declared using _wm_settings variable prior to script execution.');
+                return
+            }
+            var a = _wm.cookie.get(_wm.format.popunder.settings.cookie, _wm.format.popunder.settings.hours);
+            this.cookie = {};
+            this.cookie.times = !isNaN(Number(a[0])) ? Number(a[0]) : 0;
+            this.cookie.expires = !isNaN(Date.parse(a[1])) ? a[1] : new Date().toGMTString();
+            if (_wm.format.popunder.settings.fastbind)_wm.format.popunder.handler.bind(); else {
+                if (document.readyState == 'complete')_wm.format.popunder.handler.bind(); else {
+                    _wm.listener.add(document, 'DOMContentLoaded', function () {
+                        _wm.listener.remove(document, 'DOMContentLoaded');
+                        _wm.format.popunder.handler.bind()
+                    });
+                    _wm.listener.add(document, 'onreadystatechange', function () {
+                        if (document.readyState == 'complete') {
+                            _wm.listener.remove(document, 'onreadystatechange');
+                            _wm.format.popunder.handler.bind()
+                        }
+                    });
+                    _wm.listener.add(window, 'load', _wm.format.popunder.handler.bind)
+                }
+            }
+        },
+        url: function () {
+            var a = _wm.format.popunder.settings.url;
+            if (typeof a == 'string')return a;
+            if (_wm.array.is_array(a))return _wm.array.random_value(a);
+            if ((_wm.object.is_object(a) && !_wm.format.popunder.settings.hours))return _wm.object.random_value(a);
+            if (_wm.object.is_object(a)) {
+                if (a[_wm.format.popunder.cookie.times] != undefined)return a[_wm.format.popunder.cookie.times]; else return _wm.object.random_value(a)
+            }
+            return null
+        },
+        handler: {
+            bind: function () {
+                if (_wm.format.popunder.isBinded)return;
+                _wm.format.popunder.isBinded = true;
+                if (_wm.format.popunder.cookie.times >= _wm.format.popunder.settings.times && _wm.format.popunder.settings.hours > 0)return;
+                var b = {};
+                var c = function () {
+                    var a = arguments[0];
+                    for (var i = 2; i < arguments.length; i++) {
+                        if (i % 2)arguments[i] = arguments[i] + '.0';
+                        if (!a.hasOwnProperty(arguments[i]) && i < arguments.length - 1)a[arguments[i]] = {};
+                        if (i == arguments.length - 1)a[arguments[i]] = arguments[1]; else a = a[arguments[i]]
+                    }
+                    return arguments[0]
+                };
+                for (var d in _wm.format.popunder.callback.binder) {
+                    if (!_wm.format.popunder.callback.binder.hasOwnProperty(d))continue;
+                    var e = _wm.format.popunder.callback.binder[d];
+                    var f = d.split(',');
+                    for (var g in f) {
+                        if (!f.hasOwnProperty(g))continue;
+                        var h = f[g].split(':');
+                        var j = h.length == 1 ? ['all', 0].concat(h[0].split('_')) : (h[0].indexOf('_') != -1 ? h[0].split('_') : h[0].split('_').concat([0])).concat(h[1].split('_'));
+                        if (j.length == 3)j.push(0);
+                        b = c.apply(null, [b, e].concat(j))
+                    }
+                }
+                b = _wm.object.sort(b, true, true);
+                var k = {};
+                var l = [_wm.ua.os.name.toLowerCase().split(' ').shift(), parseInt(_wm.ua.os.version) || 0, _wm.ua.browser.name.toLowerCase().split(' ').shift(), parseInt(_wm.ua.browser.major) || 0];
+                var m = [], trace_values = [];
+                var n = b;
+                for (var i = 0; i >= 0 && i < l.length; i++) {
+                    var o = (trace_values.length > 0 ? trace_values.join(':') + ':' : '') + '' + i;
+                    if (k[o]) {
+                        var p = k[o]
+                    } else {
+                        var p = new _wm.object.iterator(n);
+                        k[o] = p
+                    }
+                    var q = false;
+                    while (p.hasNext()) {
+                        var r = p.next();
+                        if ((i % 2 && r[0] <= parseFloat(l[i])) || (i % 2 == 0 && (r[0] == l[i]) || r[0] === 'all')) {
+                            q = r[0];
+                            break
+                        }
+                    }
+                    if (q) {
+                        m.push(n);
+                        trace_values.push(q);
+                        n = n[q]
+                    } else {
+                        trace_values.pop();
+                        n = m.pop();
+                        i -= 2
+                    }
+                }
+                if (typeof n === 'function')n()
+            }, trigger: function (e) {
+                if (_wm.ua.browser.name.toLowerCase() !== 'ie' || _wm.ua.browser.major > 8)e.stopImmediatePropagation();
+                _wm.listener.clear();
+                if (!_wm.format.popunder.registerTrigger())return;
+                var a;
+                while (a = _wm.format.popunder.trigger_stack.shift())_wm.format.popunder.callback.trigger[a.shift()].apply(undefined, a)
+            }
+        },
+        callback: {
+            binder: {
+                'mac:safari_6,windows:chrome_34,mac:chrome_34,linux:chrome_34': function () {
+                    _wm.format.popunder.trigger_stack.push(['tab_trigger']);
+                    _wm.listener.add(document, 'click', _wm.format.popunder.handler.trigger);
+                    _wm.format.popunder.occupy()
+                }, 'windows:chrome_31,mac:chrome_31,linux:chrome_31': function () {
+                    _wm.format.popunder.trigger_stack.push(['flash_trigger']);
+                    _wm.listener.add(document, 'click', _wm.format.popunder.handler.trigger);
+                    _wm.format.popunder.occupy()
+                }, 'windows:chrome_28,mac:chrome_28,linux:chrome_28': function () {
+                    _wm.format.popunder.trigger_stack.push(['triple_trigger']);
+                    _wm.listener.add(document, 'click', _wm.format.popunder.handler.trigger);
+                    _wm.format.popunder.occupy()
+                }, 'firefox_12,chrome_21': function () {
+                    _wm.format.popunder.trigger_stack.push(['double_trigger']);
+                    _wm.listener.add(document, 'click', _wm.format.popunder.handler.trigger);
+                    _wm.format.popunder.occupy()
+                }, 'explorer': function () {
+                    _wm.format.popunder.trigger_stack.push(['single_delay']);
+                    _wm.listener.add(document, 'click', _wm.format.popunder.handler.trigger);
+                    _wm.format.popunder.occupy()
+                }, 'android:all,ios:all': function () {
+                    _wm.format.popunder.trigger_stack.push(['single']);
+                    _wm.listener.add(document, 'touchend', _wm.format.popunder.handler.trigger);
+                    _wm.listener.add(document, 'touchcancel', _wm.format.popunder.handler.trigger);
+                    _wm.format.popunder.occupy()
+                }, 'windows:iemobile': function () {
+                    _wm.format.popunder.trigger_stack.push(['single']);
+                    _wm.listener.add(document, 'click', _wm.format.popunder.handler.trigger);
+                    _wm.format.popunder.occupy()
+                }, 'all': function () {
+                    _wm.format.popunder.trigger_stack.push(['single']);
+                    _wm.listener.add(document, 'click', _wm.format.popunder.handler.trigger);
+                    _wm.format.popunder.occupy()
+                }
+            }, trigger: {
+                flash_trigger: function () {
+                    var d = document.createElement('div');
+                    document.body.appendChild(d);
+                    d.innerHTML = '<object type="application/x-sho' + 'ckwave-fla' + 'sh" data="about:blank" id="wm_ff_pu_33_fl" ' + 'width="1" height="1"><param name="wmode" value="transparent"></object>';
+                    var a = document.getElementById('wm_ff_pu_33_fl');
+                    a.focus();
+                    a.style.display = 'none';
+                    window.open(_wm.format.popunder.url(), 'pu_' + _wm.random(), _wm.format.popunder.config);
+                    window.open('').close()
+                }, tab_trigger: function () {
+                    var a = document.createElement('a');
+                    a.href = _wm.format.popunder.url();
+                    a.setAttribute('target', '_blank');
+                    top.window.document.body.appendChild(a);
+                    var e = document.createEvent('MouseEvents');
+                    e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, true, false, false, true, 0, null);
+                    a.dispatchEvent(e)
+                }, triple_trigger: function () {
+                    window.open('javascript:window.focus()', '_self');
+                    var w = window.open('about:blank', 'pu_' + _wm.random(), _wm.format.popunder.config);
+                    var a = document.createElement('a');
+                    a.setAttribute('href', 'data:text/html,<scr' + 'ipt>window.close();</scr' + 'ipt>');
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    var e = document.createEvent('MouseEvents');
+                    e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, true, false, false, true, 0, null);
+                    a.dispatchEvent(e);
+                    document.body.removeChild(a);
+                    w.document.open().write('<scr' + 'ipt type="text/javascript">window.location="' + _wm.format.popunder.url() + '";<\/scr' + 'ipt>');
+                    w.document.close()
+                }, double_trigger: function () {
+                    var w = window.open(_wm.format.popunder.url(), 'pu_' + _wm.random(), _wm.format.popunder.config);
+                    if (w) {
+                        w.blur();
+                        try {
+                            var b = w.window.open('about:blank');
+                            b.close()
+                        } catch (i) {
+                        }
+                        if (_wm.ua.browser == 'Firefox')window.showModalDialog("javascript:window.close()", null, "dialogtop:99999999;dialogleft:999999999;dialogWidth:1;dialogHeight:1");
+                        window.focus()
+                    }
+                }, single_delay: function () {
+                    var w = window.open(_wm.format.popunder.url(), 'pu_' + _wm.random(), _wm.format.popunder.config);
+                    window.setTimeout(window.focus, 750);
+                    window.setTimeout(window.focus, 850);
+                    if (w)w.blur()
+                }, single: function (a) {
+                    var w = window.open(_wm.format.popunder.url(), 'pu_' + _wm.random(), _wm.format.popunder.config);
+                    if (w) {
+                        w.blur();
+                        window.focus()
+                    }
+                },
+            }
+        },
+        occupy: function (a) {
+            if (!a) {
+                a = ['mousedown', 'mouseup']
+            }
+            for (var i = 0; i < a.length; i++) {
+                _wm.listener.add(document, a[i], function (e) {
+                    if (_wm.ua.browser.name.toLowerCase() !== 'ie' || _wm.ua.browser.major > 8)e.stopImmediatePropagation()
+                })
+            }
+        },
+        registerTrigger: function () {
+            if (_wm.format.popunder.isTriggered)return false;
+            _wm.format.popunder.isTriggered = true;
+            if (_wm.format.popunder.settings.hours > 0)_wm.cookie.set(_wm.format.popunder.settings.cookie, ++_wm.format.popunder.cookie.times, _wm.format.popunder.cookie.expires);
+            return true
+        }
+    };
+    (function () {
+        _wm.format.popunder.initialize()
+    })();
+</script>
+<script type="text/javascript" src="https://ads.exoclick.com/ad_track.js"></script>
+<script type="text/javascript"> (function () {
+    if (typeof exo99HL3903jjdxtrnLoad == "undefined") {
+        window.exoNoExternalUI38djdkjDDJsio96 = true;
+        var loadExta = function () {
+            var additional_src = document.createElement("script");
+            additional_src.async = true;
+            additional_src.setAttribute('type', 'text/javascript');
+            additional_src.setAttribute('src', '/1376f.php?z=2020170');
+            document.getElementsByTagName("body").item(0).appendChild(additional_src);
+        };
+        if (window.addEventListener) {
+            window.addEventListener("load", loadExta, false);
+        } else if (window.attachEvent) {
+            window.attachEvent("onload", loadExta);
+        } else {
+            window.onload = loadExta;
+        }
+    }
+})(); </script>
+</body>
+</html>
