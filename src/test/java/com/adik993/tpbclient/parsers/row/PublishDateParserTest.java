@@ -6,7 +6,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.Temporal;
 
@@ -47,7 +46,7 @@ public class PublishDateParserTest {
     @Test
     public void parseDayYer() throws ParseException {
         Element td = prepareElement("03-07 2015");
-        Temporal date = PublishDateParser.parse(td, now);
-        assertEquals(LocalDate.of(2015, 3, 7), date);
+        LocalDateTime date = PublishDateParser.parse(td, now);
+        assertEquals(LocalDateTime.of(2015, 3, 7, 0, 0), date);
     }
 }

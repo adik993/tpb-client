@@ -7,7 +7,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.time.temporal.Temporal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,7 +19,7 @@ public class PublishDateParser {
     private static final DateTimeFormatter FORMATTER_MM_DD = DateTimeFormatter.ofPattern("MM-dd");
     private static final Pattern PATTERN_X_AGO = Pattern.compile("([0-9]+)\\s+mins\\s+ago");
 
-    public static Temporal parse(Element element, LocalDateTime now) throws ParseException {
+    public static LocalDateTime parse(Element element, LocalDateTime now) throws ParseException {
         String str = element.html().replace("&nbsp;", " ");
         str = str.replace("<b>", "").replace("</b>", "");
         Matcher matcher = PATTERN_X_AGO.matcher(str);
@@ -31,7 +30,7 @@ public class PublishDateParser {
 
         str = str.replace("Today", now.format(FORMATTER_MM_DD));
         try {
-            return LocalDate.parse(str, FORMATTER);
+            return LocalDate.parse(str, FORMATTER).atTime(0, 0);
         } catch (DateTimeParseException e) {
             str = str.replace(" ", " " + now.getYear() + " ");
             return LocalDateTime.parse(str, FORMATTER2);

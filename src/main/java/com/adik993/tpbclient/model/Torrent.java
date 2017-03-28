@@ -2,7 +2,7 @@ package com.adik993.tpbclient.model;
 
 import lombok.Data;
 
-import java.time.temporal.Temporal;
+import java.time.LocalDateTime;
 
 /**
  * Created by Adrian on 2016-07-09.
@@ -15,7 +15,7 @@ public class Torrent {
     String user;
     String magnetLink;
     String torrentLink;
-    Temporal publishDate;
+    LocalDateTime publishDate;
     TorrentQuality quality;
     long size;
     int seeds;
