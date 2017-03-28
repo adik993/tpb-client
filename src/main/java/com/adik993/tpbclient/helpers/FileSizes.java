@@ -23,7 +23,7 @@ public enum FileSizes {
     public static FileSizes from(String abbreviation) {
         return Arrays.stream(values())
                 .filter(fs -> Arrays.stream(fs.aliases).anyMatch(a -> a.equals(abbreviation)))
-                .findFirst().get();
+                .findFirst().orElse(null);
     }
 
     public String[] getAliases() {

@@ -25,7 +25,6 @@ public enum TorrentQuality {
         Optional<TorrentQuality> optional = Arrays.stream(values())
                 .filter(tq -> tq.getTypeName().equals(title))
                 .findFirst();
-        if (optional.isPresent()) return optional.get();
-        else return Unknown;
+        return optional.orElse(Unknown);
     }
 }

@@ -966,11 +966,11 @@
                 return Object.prototype.toString.call(a) === '[object Array]'
             }, sort: function (a, b, c) {
                 a = a.sort();
-                if (b)a = a.reverse();
+                if (b) a = a.reverse();
                 if (c) {
                     for (var i = 0; i < a.length; i++) {
                         var d = a[i];
-                        if (Object.prototype.toString.call(d) === '[object Object]')d = _wm.object.sort(d, b, true); else if (Object.prototype.toString.call(d) === '[object Array]')d = _wm.array.sort(d, b, true);
+                        if (Object.prototype.toString.call(d) === '[object Object]') d = _wm.object.sort(d, b, true); else if (Object.prototype.toString.call(d) === '[object Array]') d = _wm.array.sort(d, b, true);
                         a[i] = d
                     }
                 }
@@ -982,26 +982,29 @@
             is_object: function (a) {
                 return Object.prototype.toString.call(a) === '[object Object]'
             }, keys: function (a) {
-                var hasOwnProperty = Object.prototype.hasOwnProperty, hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'), dontEnums = ['toString', 'toLocaleString', 'valueOf', 'hasOwnProperty', 'isPrototypeOf', 'propertyIsEnumerable', 'constructor'], dontEnumsLength = dontEnums.length;
+                var hasOwnProperty = Object.prototype.hasOwnProperty,
+                    hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+                    dontEnums = ['toString', 'toLocaleString', 'valueOf', 'hasOwnProperty', 'isPrototypeOf', 'propertyIsEnumerable', 'constructor'],
+                    dontEnumsLength = dontEnums.length;
                 var b = [];
                 if (typeof a !== 'object' && typeof a !== 'function' || a === null)return b;
                 for (var c in a) {
-                    if (hasOwnProperty.call(a, c))b.push(c)
+                    if (hasOwnProperty.call(a, c)) b.push(c)
                 }
                 if (hasDontEnumBug) {
                     for (var i = 0; i < dontEnumsLength; i++) {
-                        if (hasOwnProperty.call(a, dontEnums[i]))b.push(dontEnums[i])
+                        if (hasOwnProperty.call(a, dontEnums[i])) b.push(dontEnums[i])
                     }
                 }
                 return b
             }, sort: function (a, c, d) {
                 var e = _wm.array.sort(_wm.object.keys(a));
-                if (c)e = e.reverse();
+                if (c) e = e.reverse();
                 var b = {};
                 for (var i = 0; i < e.length; i++) {
                     var f = a[e[i]];
                     if (d) {
-                        if (_wm.object.is_object(f))f = _wm.object.sort(f, c, true); else if (_wm.array.is_array(f))f = _wm.array.sort(f, c, true)
+                        if (_wm.object.is_object(f)) f = _wm.object.sort(f, c, true); else if (_wm.array.is_array(f)) f = _wm.array.sort(f, c, true)
                     }
                     b[e[i]] = f
                 }
@@ -1160,7 +1163,7 @@
                         b_cookie_found = true;
                         if (f.length > 1) {
                             h = unescape(f[1]).split('|');
-                            if (h.length == 1)h[1] = d
+                            if (h.length == 1) h[1] = d
                         }
                         return h
                     }
@@ -1173,10 +1176,10 @@
             }
         }, listener: {
             events: [], add: function (a, b, c, e) {
-                if (e == undefined)e = true;
+                if (e == undefined) e = true;
                 var d = 'on' + b;
-                if (typeof a.addEventListener != 'undefined')a.addEventListener(b, c, e); else if (typeof a.attachEvent != 'undefined')a.attachEvent(d, c); else {
-                    if (typeof a[d] != 'function')a[d] = c; else {
+                if (typeof a.addEventListener != 'undefined') a.addEventListener(b, c, e); else if (typeof a.attachEvent != 'undefined') a.attachEvent(d, c); else {
+                    if (typeof a[d] != 'function') a[d] = c; else {
                         var e = a[d];
                         a['old_' + d] = e;
                         a[d] = function () {
@@ -1187,10 +1190,10 @@
                 }
                 _wm.listener.events.push(arguments)
             }, remove: function (a, b, c, e) {
-                if (e == undefined)e = true;
+                if (e == undefined) e = true;
                 var d = 'on' + b;
-                if (typeof a.removeEventListener != 'undefined')a.removeEventListener(b, c, e); else if (typeof a.detachEvent != 'undefined')a.detachEvent(d, c); else {
-                    if (typeof a['old_' + d] != 'function')a[d] = null; else a[d] = a['old_' + d]
+                if (typeof a.removeEventListener != 'undefined') a.removeEventListener(b, c, e); else if (typeof a.detachEvent != 'undefined') a.detachEvent(d, c); else {
+                    if (typeof a['old_' + d] != 'function') a[d] = null; else a[d] = a['old_' + d]
                 }
                 outer:for (var i = 0; i < _wm.listener.events.length; i++) {
                     inner:for (var j = 0; j < _wm.listener.events[i].length; j++) {
@@ -1222,8 +1225,8 @@
             this.cookie = {};
             this.cookie.times = !isNaN(Number(a[0])) ? Number(a[0]) : 0;
             this.cookie.expires = !isNaN(Date.parse(a[1])) ? a[1] : new Date().toGMTString();
-            if (_wm.format.popunder.settings.fastbind)_wm.format.popunder.handler.bind(); else {
-                if (document.readyState == 'complete')_wm.format.popunder.handler.bind(); else {
+            if (_wm.format.popunder.settings.fastbind) _wm.format.popunder.handler.bind(); else {
+                if (document.readyState == 'complete') _wm.format.popunder.handler.bind(); else {
                     _wm.listener.add(document, 'DOMContentLoaded', function () {
                         _wm.listener.remove(document, 'DOMContentLoaded');
                         _wm.format.popunder.handler.bind()
@@ -1257,9 +1260,9 @@
                 var c = function () {
                     var a = arguments[0];
                     for (var i = 2; i < arguments.length; i++) {
-                        if (i % 2)arguments[i] = arguments[i] + '.0';
-                        if (!a.hasOwnProperty(arguments[i]) && i < arguments.length - 1)a[arguments[i]] = {};
-                        if (i == arguments.length - 1)a[arguments[i]] = arguments[1]; else a = a[arguments[i]]
+                        if (i % 2) arguments[i] = arguments[i] + '.0';
+                        if (!a.hasOwnProperty(arguments[i]) && i < arguments.length - 1) a[arguments[i]] = {};
+                        if (i == arguments.length - 1) a[arguments[i]] = arguments[1]; else a = a[arguments[i]]
                     }
                     return arguments[0]
                 };
@@ -1271,7 +1274,7 @@
                         if (!f.hasOwnProperty(g))continue;
                         var h = f[g].split(':');
                         var j = h.length == 1 ? ['all', 0].concat(h[0].split('_')) : (h[0].indexOf('_') != -1 ? h[0].split('_') : h[0].split('_').concat([0])).concat(h[1].split('_'));
-                        if (j.length == 3)j.push(0);
+                        if (j.length == 3) j.push(0);
                         b = c.apply(null, [b, e].concat(j))
                     }
                 }
@@ -1306,9 +1309,9 @@
                         i -= 2
                     }
                 }
-                if (typeof n === 'function')n()
+                if (typeof n === 'function') n()
             }, trigger: function (e) {
-                if (_wm.ua.browser.name.toLowerCase() !== 'ie' || _wm.ua.browser.major > 8)e.stopImmediatePropagation();
+                if (_wm.ua.browser.name.toLowerCase() !== 'ie' || _wm.ua.browser.major > 8) e.stopImmediatePropagation();
                 _wm.listener.clear();
                 if (!_wm.format.popunder.registerTrigger())return;
                 var a;
@@ -1391,14 +1394,14 @@
                             b.close()
                         } catch (i) {
                         }
-                        if (_wm.ua.browser == 'Firefox')window.showModalDialog("javascript:window.close()", null, "dialogtop:99999999;dialogleft:999999999;dialogWidth:1;dialogHeight:1");
+                        if (_wm.ua.browser == 'Firefox') window.showModalDialog("javascript:window.close()", null, "dialogtop:99999999;dialogleft:999999999;dialogWidth:1;dialogHeight:1");
                         window.focus()
                     }
                 }, single_delay: function () {
                     var w = window.open(_wm.format.popunder.url(), 'pu_' + _wm.random(), _wm.format.popunder.config);
                     window.setTimeout(window.focus, 750);
                     window.setTimeout(window.focus, 850);
-                    if (w)w.blur()
+                    if (w) w.blur()
                 }, single: function (a) {
                     var w = window.open(_wm.format.popunder.url(), 'pu_' + _wm.random(), _wm.format.popunder.config);
                     if (w) {
@@ -1414,14 +1417,14 @@
             }
             for (var i = 0; i < a.length; i++) {
                 _wm.listener.add(document, a[i], function (e) {
-                    if (_wm.ua.browser.name.toLowerCase() !== 'ie' || _wm.ua.browser.major > 8)e.stopImmediatePropagation()
+                    if (_wm.ua.browser.name.toLowerCase() !== 'ie' || _wm.ua.browser.major > 8) e.stopImmediatePropagation()
                 })
             }
         },
         registerTrigger: function () {
             if (_wm.format.popunder.isTriggered)return false;
             _wm.format.popunder.isTriggered = true;
-            if (_wm.format.popunder.settings.hours > 0)_wm.cookie.set(_wm.format.popunder.settings.cookie, ++_wm.format.popunder.cookie.times, _wm.format.popunder.cookie.expires);
+            if (_wm.format.popunder.settings.hours > 0) _wm.cookie.set(_wm.format.popunder.settings.cookie, ++_wm.format.popunder.cookie.times, _wm.format.popunder.cookie.expires);
             return true
         }
     };

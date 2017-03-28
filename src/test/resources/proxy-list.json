@@ -1,0 +1,175 @@
+{
+  "proxies": [
+    {
+      "domain": "thebay.tv",
+      "speed": 0.067,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "ukpirateproxy.xyz",
+      "speed": 0.116,
+      "secure": true,
+      "country": "ES",
+      "probed": true
+    },
+    {
+      "domain": "ukpirate.click",
+      "speed": 0.174,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "fastpiratebay.co.uk",
+      "speed": 0.21,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "urbanproxy.eu",
+      "speed": 0.339,
+      "secure": true,
+      "country": "NO",
+      "probed": true
+    },
+    {
+      "domain": "pirateproxy.yt",
+      "speed": 0.359,
+      "secure": true,
+      "country": "AU",
+      "probed": true
+    },
+    {
+      "domain": "pirateproxy.wf",
+      "speed": 0.417,
+      "secure": true,
+      "country": "FR",
+      "probed": true
+    },
+    {
+      "domain": "gameofbay.org",
+      "speed": 0.495,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "pirateproxy.tf",
+      "speed": 0.519,
+      "secure": true,
+      "country": "ES",
+      "probed": true
+    },
+    {
+      "domain": "pirateproxy.online",
+      "speed": 0.577,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "thepiratebay-proxy.com",
+      "speed": 0.683,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "piratebays.co",
+      "speed": 0.701,
+      "secure": true,
+      "country": "FR",
+      "probed": true
+    },
+    {
+      "domain": "tpbunblocked.org",
+      "speed": 0.774,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "ukpirate.org",
+      "speed": 0.802,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "piratebay.click",
+      "speed": 0.87,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "piratebayproxy.tf",
+      "speed": 0.927,
+      "secure": true,
+      "country": "BE",
+      "probed": true
+    },
+    {
+      "domain": "piratebays.co.uk",
+      "speed": 1.588,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "tpbmirror.us",
+      "speed": 1.636,
+      "secure": true,
+      "country": "NL",
+      "probed": true
+    },
+    {
+      "domain": "unblockedbay.info",
+      "speed": 1.673,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "piratebaymirror.eu",
+      "speed": 1.758,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    },
+    {
+      "domain": "pirateproxy.click",
+      "speed": 1.883,
+      "secure": true,
+      "country": "FR",
+      "probed": true
+    },
+    {
+      "domain": "pirate.trade",
+      "speed": 10.311,
+      "secure": true,
+      "country": "ES",
+      "probed": true
+    },
+    {
+      "domain": "piratebay.red",
+      "speed": 42.018,
+      "secure": true,
+      "country": "IN",
+      "probed": true
+    },
+    {
+      "domain": "thepiratebay.uk.net",
+      "speed": 45.186,
+      "secure": true,
+      "country": "UK",
+      "probed": true
+    }
+  ],
+  "meta": {
+    "last_updated": 1490726403
+  }
+}

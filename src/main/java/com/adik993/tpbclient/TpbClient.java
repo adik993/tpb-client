@@ -33,7 +33,6 @@ public class TpbClient {
 
     private URI host;
 
-
     public static TpbClient withHost(String host) {
         TpbClient client = new TpbClient();
         try {
@@ -51,11 +50,11 @@ public class TpbClient {
         return withHost(DEFAULT_HOST);
     }
 
-    public static TpbResult get(String url) throws IOException, ParseException {
+    public TpbResult get(String url) throws IOException, ParseException {
         return TpbResultParser.parse(fetchDocument(url));
     }
 
-    protected static Document fetchDocument(String url) throws IOException {
+    Document fetchDocument(String url) throws IOException {
         Connection connect = Jsoup.connect(url);
         connect.userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
         connect.cookie("lw", "s");
@@ -74,7 +73,7 @@ public class TpbClient {
                 PARAM_ORDER_BY, orderBy));
     }
 
-    protected URL buildUrl(List<NameValuePair> params) {
+    URL buildUrl(List<NameValuePair> params) {
         try {
             URIBuilder builder = new URIBuilder(host);
             return builder
@@ -85,7 +84,7 @@ public class TpbClient {
         }
     }
 
-    protected static List<NameValuePair> toParams(Object... objects) {
+    static List<NameValuePair> toParams(Object... objects) {
         if (objects.length % 2 != 0) throw new IllegalStateException("Number of parameters must be even");
         List<NameValuePair> ret = new ArrayList<>(objects.length / 2);
         for (int i = 0; i < objects.length; i += 2) {

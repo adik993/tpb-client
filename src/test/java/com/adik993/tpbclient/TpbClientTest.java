@@ -11,11 +11,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.BDDMockito;
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,12 +19,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.spy;
 
 /**
  * Created by Adrian on 2016-07-10.
  */
-@RunWith(PowerMockRunner.class)
-@PrepareForTest(TpbClient.class)
 public class TpbClientTest {
 
     @Test
@@ -65,12 +60,11 @@ public class TpbClientTest {
     @Test
     public void testGet() throws IOException, ParseException {
         InputStream stream = getClass().getClassLoader().getResourceAsStream("result.html");
-        PowerMockito.mockStatic(TpbClient.class);
+        TpbClient tpbClient = spy(TpbClient.withDefaultHost());
         String url = "https://thepiratebay.org/s/?q=Banshee&category=0&page=0&orderby=99";
         Document doc = Jsoup.parse(stream, StandardCharsets.UTF_8.name(), url);
-        BDDMockito.given(TpbClient.fetchDocument(url)).willReturn(doc);
-        BDDMockito.given(TpbClient.get(url)).willCallRealMethod();
-        TpbResult result = TpbClient.get(url);
+        doReturn(doc).when(tpbClient).fetchDocument(url);
+        TpbResult result = tpbClient.get(url);
         assertEquals(new PageInfo(30, 666), result.getPageInfo());
     }
 }

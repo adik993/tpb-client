@@ -85,8 +85,7 @@ public enum Category {
         Optional<Category> optional = Arrays.stream(values())
                 .filter(category -> category.getId() == id)
                 .findFirst();
-        if (optional.isPresent()) return optional.get();
-        else return Unknown;
+        return optional.orElse(Unknown);
     }
 
     public int getId() {
