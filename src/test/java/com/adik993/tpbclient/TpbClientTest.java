@@ -54,7 +54,7 @@ public class TpbClientTest {
     public void testBuildUrl() {
         TpbClient client = TpbClient.withDefaultHost();
         URL url = client.buildUrl(TpbClient.toParams("cos", "0", "cos2", "1"));
-        assertEquals("https://" + TpbClient.DEFAULT_HOST + "/s?cos=0&cos2=1", url.toString());
+        assertEquals("https://" + TpbClient.DEFAULT_HOST + "/s/?cos=0&cos2=1", url.toString());
     }
 
     @Test

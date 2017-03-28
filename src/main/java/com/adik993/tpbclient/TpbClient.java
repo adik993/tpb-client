@@ -6,6 +6,7 @@ import com.adik993.tpbclient.model.Category;
 import com.adik993.tpbclient.model.OrderBy;
 import com.adik993.tpbclient.model.TpbResult;
 import com.adik993.tpbclient.parsers.TpbResultParser;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.message.BasicNameValuePair;
@@ -24,6 +25,7 @@ import java.util.List;
 /**
  * Created by Adrian on 2016-07-10.
  */
+@Slf4j
 public class TpbClient {
     public static final String PARAM_QUERY = "q";
     public static final String PARAM_CATEGORY = "category";
@@ -51,6 +53,7 @@ public class TpbClient {
     }
 
     public TpbResult get(String url) throws IOException, ParseException {
+        log.debug("Seaching for torrents at {}", url);
         return TpbResultParser.parse(fetchDocument(url));
     }
 
@@ -77,7 +80,7 @@ public class TpbClient {
         try {
             URIBuilder builder = new URIBuilder(host);
             return builder
-                    .setPath("/s")
+                    .setPath("/s/")
                     .addParameters(params).build().toURL();
         } catch (URISyntaxException | MalformedURLException e) {
             return null;
