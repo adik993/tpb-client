@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Proxy {
+    private int id;
     private String domain;
     private float speed;
     private boolean secure;

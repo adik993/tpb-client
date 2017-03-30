@@ -53,7 +53,7 @@ public class TpbClient {
     }
 
     public TpbResult get(String url) throws IOException, ParseException {
-        log.debug("Seaching for torrents at {}", url);
+        log.debug("Searching for torrents at {}", url);
         return TpbResultParser.parse(fetchDocument(url));
     }
 
