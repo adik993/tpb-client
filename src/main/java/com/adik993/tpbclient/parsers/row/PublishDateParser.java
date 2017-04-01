@@ -29,6 +29,7 @@ public class PublishDateParser {
         }
 
         str = str.replace("Today", now.format(FORMATTER_MM_DD));
+        str = str.replace("Y-day", now.minusDays(1).format(FORMATTER_MM_DD));
         try {
             return LocalDate.parse(str, FORMATTER).atTime(0, 0);
         } catch (DateTimeParseException e) {

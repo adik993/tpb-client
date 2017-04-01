@@ -37,6 +37,14 @@ public class PublishDateParserTest {
     }
 
     @Test
+    public void parseYday() throws ParseException {
+        Element td = prepareElement("Y-day 11:08");
+        LocalDateTime yday = now.minusDays(1);
+        Temporal date = PublishDateParser.parse(td, now);
+        assertEquals(LocalDateTime.of(yday.getYear(), yday.getMonth(), yday.getDayOfMonth(), 11, 8), date);
+    }
+
+    @Test
     public void parseTodayHour() throws ParseException {
         Element td = prepareElement("07-21 09:11");
         Temporal date = PublishDateParser.parse(td, now);
