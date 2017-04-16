@@ -8,9 +8,6 @@ import org.jsoup.select.Elements;
 
 import java.time.LocalDateTime;
 
-/**
- * Created by Adrian on 2016-07-09.
- */
 public class TpbTorrentRowParser {
 
     public static Torrent parse(Element row) throws ParseException {

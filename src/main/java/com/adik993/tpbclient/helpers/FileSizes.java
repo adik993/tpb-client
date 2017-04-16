@@ -2,20 +2,18 @@ package com.adik993.tpbclient.helpers;
 
 import java.util.Arrays;
 
-/**
- * Created by Adrian on 2016-07-09.
- */
 public enum FileSizes {
-    KB(new String[]{"KB", "KiB"}, 1024),
-    MB(new String[]{"MB", "MiB"}, 1024 * KB.multiplier),
-    GB(new String[]{"GB", "GiB"}, 1024 * MB.multiplier),
-    TB(new String[]{"TB", "TiB"}, 1024 * GB.multiplier),
-    PB(new String[]{"PB", "PiB"}, 1024 * TB.multiplier);
+    B(new String[]{"B"}, 1L),
+    KB(new String[]{"KB", "KiB"}, 1024L * B.multiplier),
+    MB(new String[]{"MB", "MiB"}, 1024L * KB.multiplier),
+    GB(new String[]{"GB", "GiB"}, 1024L * MB.multiplier),
+    TB(new String[]{"TB", "TiB"}, 1024L * GB.multiplier),
+    PB(new String[]{"PB", "PiB"}, 1024L * TB.multiplier);
 
     private final String[] aliases;
-    private final int multiplier;
+    private final long multiplier;
 
-    FileSizes(String[] aliases, int multiplier) {
+    FileSizes(String[] aliases, long multiplier) {
         this.aliases = aliases;
         this.multiplier = multiplier;
     }
@@ -30,7 +28,7 @@ public enum FileSizes {
         return aliases;
     }
 
-    public int getMultiplier() {
+    public long getMultiplier() {
         return multiplier;
     }
 }

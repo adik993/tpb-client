@@ -8,9 +8,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by Adrian on 2016-07-10.
- */
 public class SizeParserTest {
 
     @Test
