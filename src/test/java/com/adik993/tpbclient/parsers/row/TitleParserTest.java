@@ -5,11 +5,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.stream.Collectors;
+
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by Adrian on 2016-07-10.
- */
 public class TitleParserTest {
 
     @Test
@@ -18,6 +19,16 @@ public class TitleParserTest {
         Element td = doc.select("td").first();
         String parse = TitleParser.parse(td);
         assertEquals("Movie title", parse);
+    }
+
+    @Test
+    public void testParseEmbededJavaScript() throws Exception {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("title_embeded_js.html")));
+        String htmlFragment = bufferedReader.lines().collect(Collectors.joining("\n"));
+        Document doc = Jsoup.parseBodyFragment(htmlFragment);
+        Element td = doc.select("td").first();
+        String parse = TitleParser.parse(td);
+        assertEquals("07.09.28.Next.2007.HDDVD.720p.x264@Ht", parse);
     }
 
 }
