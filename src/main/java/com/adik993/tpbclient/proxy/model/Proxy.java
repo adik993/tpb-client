@@ -1,19 +1,9 @@
 package com.adik993.tpbclient.proxy.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Value;
 
-/**
- * Created by adrian on 28/03/17.
- */
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Value
 public class Proxy {
-    private int id;
     private String domain;
     private float speed;
     private boolean secure;

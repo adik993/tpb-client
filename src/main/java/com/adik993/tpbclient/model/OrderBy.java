@@ -1,8 +1,5 @@
 package com.adik993.tpbclient.model;
 
-/**
- * Created by Adrian on 2016-07-10.
- */
 public enum OrderBy {
     NameDesc(1),
     NameAsc(2),

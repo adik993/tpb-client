@@ -1,11 +1,10 @@
 package com.adik993.tpbclient.model;
 
+import org.jsoup.nodes.Element;
+
 import java.util.Arrays;
 import java.util.Optional;
 
-/**
- * Created by Adrian on 2016-07-09.
- */
 public enum TorrentQuality {
     VIP("VIP"),
     Trusted("Trusted"),
@@ -21,7 +20,9 @@ public enum TorrentQuality {
         return typeName;
     }
 
-    public static TorrentQuality parse(String title) {
+    static TorrentQuality parse(Element element) {
+        String title = element.select("a[href*=/user/] img[title]")
+                .attr("title");
         Optional<TorrentQuality> optional = Arrays.stream(values())
                 .filter(tq -> tq.getTypeName().equals(title))
                 .findFirst();

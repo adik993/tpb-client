@@ -1,12 +1,12 @@
 package com.adik993.tpbclient.proxy;
 
 import com.adik993.tpbclient.proxy.model.Proxy;
-import com.adik993.tpbclient.proxy.model.ProxyListWrapper;
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
+import io.reactivex.Flowable;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -14,59 +14,45 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
+
+import static java.util.Optional.ofNullable;
 
 @Slf4j
 public class ProxyList {
-    private static final String PROXY_LIS_URL = "https://thepiratebay-proxylist.org/api/v1/proxies";
+    public static final String DEFAULT_URL = "https://thepiratebay-proxylist.se/api/v1/proxies";
     private HttpClient httpClient;
     private HttpGet getProxyList;
     private Gson gson = new Gson();
-    private volatile List<Proxy> proxies;
 
-    public ProxyList() {
-        this(HttpClientBuilder.create().build());
-    }
-
-    public ProxyList(HttpClient httpClient) {
-        this.httpClient = httpClient;
-        this.getProxyList = new HttpGet(PROXY_LIS_URL);
+    public ProxyList(String url) {
+        this.httpClient = HttpClientBuilder.create().build();
+        this.getProxyList = new HttpGet(url);
         this.getProxyList.addHeader("accept", "application/json");
     }
 
-    public void init() throws IOException {
-        log.debug("Fetching proxies");
-        proxies = fetchProxies();
-        log.debug("Proxies fetched");
+    public Flowable<Proxy> fetchProxies() {
+        return Flowable.fromCallable(() -> httpClient.execute(getProxyList))
+                .doOnSubscribe(subscription -> log.debug("fetching tpb proxies.."))
+                .map(response -> response.getEntity().getContent())
+                .flatMapIterable(this::parseResponse);
     }
 
-    List<Proxy> fetchProxies() throws IOException {
-        HttpResponse response = httpClient.execute(getProxyList);
-        return parseResponse(response.getEntity().getContent());
-    }
-
-    List<Proxy> parseResponse(InputStream stream) throws IOException {
+    private List<Proxy> parseResponse(InputStream stream) throws IOException {
         InputStreamReader reader = new InputStreamReader(stream);
         try {
             log.debug("Parsing tpb proxy list response");
-            return gson.fromJson(reader, ProxyListWrapper.class).getProxies();
+            return ofNullable(gson.fromJson(reader, ProxyListWrapper.class))
+                    .map(ProxyListWrapper::getProxies)
+                    .orElseThrow(() -> new IOException("Invalid response received"));
         } catch (JsonSyntaxException | JsonIOException e) {
             throw new IOException(e);
         }
     }
 
-    public List<Proxy> getProxyList() throws IOException {
-        if (proxies == null) {
-            synchronized (this) {
-                if (proxies == null) {
-                    init();
-                }
-            }
-        }
-        return proxies;
-    }
-
-    public List<Proxy> getProxyListIfPresent() {
-        return proxies;
+    @Getter
+    private static class ProxyListWrapper {
+        List<Proxy> proxies = new ArrayList<>();
     }
 }

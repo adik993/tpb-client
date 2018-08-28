@@ -1,15 +1,13 @@
 package com.adik993.tpbclient.model;
 
 import com.adik993.tpbclient.exceptions.ParseException;
+import org.jsoup.nodes.Element;
 
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Adrian on 2016-07-09.
- */
 public enum Category {
     All(0),
 
@@ -78,7 +76,8 @@ public enum Category {
         this.id = id;
     }
 
-    public static Category parse(String href) throws ParseException {
+    static Category parse(Element element) throws ParseException {
+        String href = element.select("a[href]").attr("href");
         Matcher matcher = PATTERN.matcher(href);
         if (!matcher.matches()) throw new ParseException("Unbale to parse " + href);
         int id = Integer.parseInt(matcher.group(1));
