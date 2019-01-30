@@ -1,6 +1,7 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
+    id("com.gradle.build-scan") version "2.1"
     `java-library`
     groovy
     idea
@@ -10,6 +11,11 @@ plugins {
 
 group = "com.adik993"
 version = "1.0.0"
+
+buildScan {
+    termsOfServiceUrl = "https://gradle.com/terms-of-service"
+    termsOfServiceAgree = "yes"
+}
 
 idea {
     module {
@@ -66,9 +72,9 @@ artifacts {
 }
 
 dependencies {
-    api("io.reactivex.rxjava2:rxjava:2.2.5")
+    api("io.reactivex.rxjava2:rxjava:2.2.6")
     implementation("org.jsoup:jsoup:1.11.3")
-    implementation("org.apache.httpcomponents:httpclient:4.5.6")
+    implementation("org.apache.httpcomponents:httpclient:4.5.7")
     implementation("com.google.code.gson:gson:2.8.5")
     implementation("org.slf4j:slf4j-api:1.7.25")
 
