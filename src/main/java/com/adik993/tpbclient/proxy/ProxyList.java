@@ -36,7 +36,9 @@ public class ProxyList {
         return Flowable.fromCallable(() -> httpClient.execute(getProxyList))
                 .doOnSubscribe(subscription -> log.debug("fetching tpb proxies.."))
                 .map(response -> response.getEntity().getContent())
-                .flatMapIterable(this::parseResponse);
+                .map(this::parseResponse)
+                .doOnNext(proxies -> log.trace("fetched proxies: {}", proxies))
+                .flatMapIterable(proxies -> proxies);
     }
 
     private List<Proxy> parseResponse(InputStream stream) throws IOException {

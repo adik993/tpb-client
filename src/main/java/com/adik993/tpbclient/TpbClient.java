@@ -67,7 +67,8 @@ public class TpbClient {
                         log.debug("error searching for torrents at {}. Response status is {}", url, ((HttpStatusException) throwable).getStatusCode());
                 })
                 .doOnSubscribe(disposable -> log.debug("Searching for torrents at {}", url))
-                .map(document -> new TpbResult(document, now()));
+                .map(document -> new TpbResult(document, now()))
+                .doOnSuccess(tpbResult -> log.trace("fetched torrents: {}", tpbResult.getTorrents()));
     }
 
     private Single<Document> fetchDocument(String url) {

@@ -6,6 +6,7 @@ plugins {
     groovy
     idea
     maven
+    jacoco
     id("com.github.ben-manes.versions").version("0.20.0")
 }
 
@@ -30,13 +31,13 @@ java {
 }
 
 tasks {
-    "javadoc"(Javadoc::class) {
+    withType<Javadoc> {
         if (java.sourceCompatibility >= JavaVersion.VERSION_1_10) {
             (options as CoreJavadocOptions).addBooleanOption("html5", true)
         }
     }
 
-    "dependencyUpdates"(DependencyUpdatesTask::class) {
+    withType<DependencyUpdatesTask> {
         resolutionStrategy {
             componentSelection {
                 all {
@@ -49,6 +50,14 @@ tasks {
                 }
             }
         }
+    }
+
+    withType<JacocoReport> {
+        reports {
+            xml.isEnabled = true
+            html.isEnabled = false
+        }
+        setDependsOn(withType<Test>())
     }
 }
 
@@ -77,8 +86,9 @@ dependencies {
     implementation("org.apache.httpcomponents:httpclient:4.5.7")
     implementation("com.google.code.gson:gson:2.8.5")
     implementation("org.slf4j:slf4j-api:1.7.25")
+    implementation("org.slf4j:jcl-over-slf4j:1.7.25")
 
-    compileOnly("org.slf4j:slf4j-simple:1.7.25")
+//    compileOnly("org.slf4j:slf4j-simple:1.7.25")
     compileOnly("org.projectlombok:lombok:1.18.4")
 
     testImplementation("org.spockframework:spock-core:1.2-groovy-2.5")
@@ -86,6 +96,8 @@ dependencies {
     testImplementation("org.mockito:mockito-core:2.23.4")
     testImplementation("com.github.tomakehurst:wiremock:2.20.0")
     testImplementation("com.github.tomjankes:wiremock-groovy:0.2.0")
+    testImplementation("org.apache.logging.log4j:log4j-slf4j-impl:2.11.1")
+
 
     annotationProcessor("org.projectlombok:lombok:1.18.4")
 }

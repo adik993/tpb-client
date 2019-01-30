@@ -4,6 +4,7 @@ import com.adik993.tpbclient.exceptions.ClientBuildException
 import com.adik993.tpbclient.proxy.model.Proxy
 import com.github.tomakehurst.wiremock.junit.WireMockRule
 import com.github.tomjankes.wiremock.WireMockGroovy
+import org.jsoup.HttpStatusException
 import org.junit.Rule
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -91,5 +92,28 @@ class TpbClientSpec extends Specification {
         result.pageInfo.pageSize == 30
         result.pageInfo.total == 666
         result.torrents.size() == 30
+    }
+
+    def "search - error http response ends stream with onError"() {
+        given:
+        def wireMock = new WireMockGroovy(wireMockRule.port())
+        wireMock.stub {
+            request {
+                method "GET"
+                url "/s/?q=Banshee&category=200&page=1&orderby=7"
+            }
+            response {
+                status 404
+                body getClass().getClassLoader().getResourceAsStream("result.html").getText()
+            }
+        }
+        def underSpec = TpbClient.withHost("localhost:${wireMockRule.port()}", false)
+
+        when:
+        def subscriber = underSpec.search("Banshee", Video, 1, SeedsDesc).test()
+        subscriber.awaitTerminalEvent()
+
+        then:
+        subscriber.assertError(HttpStatusException)
     }
 }
