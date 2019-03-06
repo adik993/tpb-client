@@ -1,13 +1,14 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import com.github.benmanes.gradle.versions.updates.gradle.GradleReleaseChannel.CURRENT
 
 plugins {
-    id("com.gradle.build-scan") version "2.1"
+    id("com.gradle.build-scan") version "2.2.1"
     `java-library`
     groovy
     idea
     maven
     jacoco
-    id("com.github.ben-manes.versions").version("0.20.0")
+    id("com.github.ben-manes.versions").version("0.21.0")
 }
 
 group = "com.adik993"
@@ -50,6 +51,7 @@ tasks {
                 }
             }
         }
+        gradleReleaseChannel = CURRENT.id
     }
 
     withType<JacocoReport> {
@@ -81,25 +83,24 @@ artifacts {
 }
 
 dependencies {
-    api("io.reactivex.rxjava2:rxjava:2.2.6")
+    api("io.reactivex.rxjava2:rxjava:2.2.7")
     implementation("org.jsoup:jsoup:1.11.3")
     implementation("org.apache.httpcomponents:httpclient:4.5.7")
     implementation("com.google.code.gson:gson:2.8.5")
-    implementation("org.slf4j:slf4j-api:1.7.25")
-    implementation("org.slf4j:jcl-over-slf4j:1.7.25")
+    implementation("org.slf4j:slf4j-api:1.7.26")
+    implementation("org.slf4j:jcl-over-slf4j:1.7.26")
 
-//    compileOnly("org.slf4j:slf4j-simple:1.7.25")
-    compileOnly("org.projectlombok:lombok:1.18.4")
+    compileOnly("org.projectlombok:lombok:1.18.6")
 
-    testImplementation("org.spockframework:spock-core:1.2-groovy-2.5")
+    testImplementation("org.spockframework:spock-core:1.3-groovy-2.5")
     testImplementation("junit:junit:4.12")
-    testImplementation("org.mockito:mockito-core:2.23.4")
-    testImplementation("com.github.tomakehurst:wiremock:2.20.0")
+    testImplementation("org.mockito:mockito-core:2.25.0")
+    testImplementation("com.github.tomakehurst:wiremock:2.21.0")
     testImplementation("com.github.tomjankes:wiremock-groovy:0.2.0")
-    testImplementation("org.apache.logging.log4j:log4j-slf4j-impl:2.11.1")
+    testImplementation("org.apache.logging.log4j:log4j-slf4j-impl:2.11.2")
 
 
-    annotationProcessor("org.projectlombok:lombok:1.18.4")
+    annotationProcessor("org.projectlombok:lombok:1.18.6")
 }
 
 repositories {
