@@ -83,9 +83,9 @@ artifacts {
 }
 
 dependencies {
-    api("io.reactivex.rxjava2:rxjava:2.2.7")
+    api("io.reactivex.rxjava2:rxjava:2.2.8")
     implementation("org.jsoup:jsoup:1.11.3")
-    implementation("org.apache.httpcomponents:httpclient:4.5.7")
+    implementation("org.apache.httpcomponents:httpclient:4.5.8")
     implementation("com.google.code.gson:gson:2.8.5")
     implementation("org.slf4j:slf4j-api:1.7.26")
     implementation("org.slf4j:jcl-over-slf4j:1.7.26")
@@ -94,8 +94,8 @@ dependencies {
 
     testImplementation("org.spockframework:spock-core:1.3-groovy-2.5")
     testImplementation("junit:junit:4.12")
-    testImplementation("org.mockito:mockito-core:2.25.0")
-    testImplementation("com.github.tomakehurst:wiremock:2.21.0")
+    testImplementation("org.mockito:mockito-core:2.26.0")
+    testImplementation("com.github.tomakehurst:wiremock:2.22.0")
     testImplementation("com.github.tomjankes:wiremock-groovy:0.2.0")
     testImplementation("org.apache.logging.log4j:log4j-slf4j-impl:2.11.2")
 
