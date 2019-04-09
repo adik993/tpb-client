@@ -27,13 +27,20 @@ idea {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks {
+    withType<Test>() {
+        if(java.sourceCompatibility.isJava9Compatible) {
+            jvmArgs("--add-opens", "java.base/java.lang=ALL-UNNAMED")
+            jvmArgs("--illegal-access=deny")
+        }
+    }
+
     withType<Javadoc> {
-        if (java.sourceCompatibility >= JavaVersion.VERSION_1_10) {
+        if (java.sourceCompatibility.isJava9Compatible) {
             (options as CoreJavadocOptions).addBooleanOption("html5", true)
         }
     }
